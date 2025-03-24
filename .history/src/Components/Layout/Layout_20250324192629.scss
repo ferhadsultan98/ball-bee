@@ -1,0 +1,11 @@
+// src/components/Layout.scss
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  
+    main {
+      flex: 1; // Ensures main content takes remaining space between header and footer
+      padding-top: 80px; // Space for fixed header
+    }
+  }

@@ -1,0 +1,227 @@
+// src/Pages/Contact/Contact.scss
+.contact {
+    width: 100%;
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%); // Light honey gradient
+    padding: 0;
+  
+    /* Hero Section */
+    .contact-hero {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+      }
+  
+      .hero-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff8e1; // Light honey text
+  
+        h1 {
+          font-size: 3.5rem;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+  
+        p {
+          font-size: 1.5rem;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  
+    /* Contact Info Section */
+    .contact-section {
+      padding: 60px 20px;
+    }
+  
+    .contact-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  
+    .contact-info {
+      text-align: center;
+      background-color: #fff8e1; // Light honey background
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 600px;
+      margin: 0 auto;
+  
+      .brand-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+  
+        .brand-logo {
+          height: 100px; // Adjust based on your logo size
+          margin-bottom: 15px;
+          transition: transform 0.3s;
+  
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+  
+        .brand-name {
+          font-size: 2rem;
+          color: #4a2c00; // Dark honey brown
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+      }
+  
+      .section-title {
+        font-size: 1.5rem;
+        color: #ff9900; // Bright honey color
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+  
+      .contact-details {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 30px;
+  
+        li {
+          font-size: 1.1rem;
+          color: #8a5522; // Muted honey brown
+          margin-bottom: 15px;
+  
+          strong {
+            color: #4a2c00; // Dark honey brown
+            font-weight: 600;
+            margin-right: 5px;
+          }
+        }
+      }
+  
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+  
+        .social-link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          font-size: 1.5rem;
+          color: #fff8e1; // Light honey text
+          transition: transform 0.3s ease, background-color 0.3s ease;
+  
+          &:hover {
+            transform: scale(1.1);
+          }
+  
+          &.facebook {
+            background-color: #3b5998; // Facebook blue
+            &:hover {
+              background-color: #2d4373;
+            }
+          }
+  
+          &.instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); // Instagram gradient
+            &:hover {
+              background: linear-gradient(45deg, #d9832c, #cc5b34, #c1233a, #b11f5a, #a11677);
+            }
+          }
+  
+          &.tiktok {
+            background-color: #000000; // TikTok black
+            &:hover {
+              background-color: #1a1a1a;
+            }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 1024px) {
+      .contact-hero {
+        height: 400px;
+  
+        .hero-overlay {
+          h1 {
+            font-size: 2.5rem;
+          }
+  
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .contact-hero {
+        height: 300px;
+  
+        .hero-overlay {
+          h1 {
+            font-size: 2rem;
+          }
+  
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+  
+      .contact-section {
+        padding: 40px 20px;
+      }
+  
+      .contact-info {
+        padding: 30px;
+  
+        .brand-info {
+          .brand-logo {
+            height: 80px;
+          }
+  
+          .brand-name {
+            font-size: 1.5rem;
+          }
+        }
+  
+        .section-title {
+          font-size: 1.3rem;
+        }
+  
+        .contact-details {
+          li {
+            font-size: 1rem;
+          }
+        }
+  
+        .social-links {
+          gap: 15px;
+  
+          .social-link {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }

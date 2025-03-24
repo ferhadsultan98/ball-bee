@@ -1,0 +1,125 @@
+// src/Pages/Home/Home.scss
+.home {
+    width: 100%;
+    min-height: calc(100vh - 80px); // Adjust for header height
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+border: 2px solid red;
+    .home-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .home-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  
+      .welcome-text {
+        font-size: 1.2rem;
+        color: #ff9900; // Bright honey color
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+  
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+        color: #4a2c00; // Dark honey brown
+        text-transform: uppercase;
+        font-weight: 800;
+  
+        br {
+          display: block;
+        }
+      }
+  
+      .description {
+        font-size: 1rem;
+        color: #8a5522; // Muted honey brown
+        line-height: 1.6;
+        max-width: 400px;
+      }
+  
+      .learn-more-btn {
+        padding: 12px 30px;
+        background-color: #ff9900; // Bright honey color
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        width: fit-content;
+  
+        &:hover {
+          background-color: #e68a00; // Darker honey on hover
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+        }
+  
+        &:active {
+          transform: translateY(0);
+          box-shadow: none;
+        }
+      }
+    }
+  
+    .home-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+  
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .home-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+      }
+  
+      .home-text {
+        h1 {
+          font-size: 2.5rem;
+        }
+  
+        .description {
+          max-width: 100%;
+        }
+  
+        .learn-more-btn {
+          margin: 0 auto;
+        }
+      }
+  
+      .home-image {
+        justify-content: center;
+        img {
+          max-width: 80%;
+        }
+      }
+    }
+  }
