@@ -18,7 +18,7 @@ import gridImage2 from '../../assets/honey1.avif';
 import gridImage3 from '../../assets/honey1.avif';
 import gridImage4 from '../../assets/honey1.avif';
 
-
+  const { t, i18n } = useTranslation();
 
 const sliderImages = [
   { src: honeyImage1, title: 'Təbii Çiçək Balı', description: 'Ən təmiz çiçəklərdən toplanmış bal.' },
@@ -75,7 +75,7 @@ const Gallery = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
   };
-  const { t, i18n } = useTranslation();
+
   return (
     <div className="gallery">
       {/* Hero Section */}

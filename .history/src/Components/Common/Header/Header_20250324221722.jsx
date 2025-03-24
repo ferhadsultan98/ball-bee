@@ -15,7 +15,7 @@ const Header = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false); // Close menu after language change on mobile
   };
 
   return (

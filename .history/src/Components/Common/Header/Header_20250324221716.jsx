@@ -15,7 +15,7 @@ const Header = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setIsMenuOpen(false); 
+    setIsMenuOpen(false); // Close menu after language change on mobile
   };
 
   return (
@@ -45,12 +45,12 @@ const Header = () => {
             </li>
             <li>
               <NavLink to="/products" onClick={() => setIsMenuOpen(false)}>
-                {t('header.products')}
+                {t('nav.products')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
-                {t('header.contact')}
+                {t('nav.contact')}
               </NavLink>
             </li>
             <li className="language-switcher">

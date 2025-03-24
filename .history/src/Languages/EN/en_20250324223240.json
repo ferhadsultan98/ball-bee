@@ -11,14 +11,10 @@
       "description": "Discover the finest, purest honey, harvested from nature’s best. Sweet, healthy, and full of flavor – perfect for every occasion.",
       "learnmore": "Learn More"
     },
-    "about": {
-        "head": 
-    },
     "gallery": {
         "head": "Our Honey Gallery",
         "desc": "Discover nature's sweetest gift!",
-        "choosehoney": "Our Selected Honey Varieties",
-        "honeyproduct": "Our Honey Production Process"
+        "choosehoney":
     },
     "footer": {
         "head": "Ball-Bee",

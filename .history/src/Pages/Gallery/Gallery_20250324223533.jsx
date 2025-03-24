@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick.css'; // Slick carousel styles
 import 'slick-carousel/slick/slick-theme.css';
 import './Gallery.scss';
 import { useTranslation } from 'react-i18next';
-
 // Sample images (replace with your own)
 import featuredImage from '../../assets/honey1.avif'; // Featured image for hero
 import honeyImage1 from '../../assets/honey1.avif';
@@ -17,8 +16,6 @@ import gridImage1 from '../../assets/honey1.avif';
 import gridImage2 from '../../assets/honey1.avif';
 import gridImage3 from '../../assets/honey1.avif';
 import gridImage4 from '../../assets/honey1.avif';
-
-
 
 const sliderImages = [
   { src: honeyImage1, title: 'Təbii Çiçək Balı', description: 'Ən təmiz çiçəklərdən toplanmış bal.' },
@@ -75,14 +72,14 @@ const Gallery = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
   };
-  const { t, i18n } = useTranslation();
+
   return (
     <div className="gallery">
       {/* Hero Section */}
       <div className="gallery-hero">
         <div className="hero-overlay">
-          <h1>{t('gallery.head')}</h1>
-          <p>{t('gallery.desc')}</p>
+          <h1>Bal Qalereyamız</h1>
+          <p>Təbiətin ən şirin hədiyyəsini kəşf edin!</p>
         </div>
         <img src={featuredImage} alt="Featured Honey" />
       </div>
@@ -90,7 +87,7 @@ const Gallery = () => {
       {/* Slider Section */}
       <div className="gallery-section gallery-slider">
         <div className="gallery-container">
-          <h2 className="section-title">{t('gallery.choosehoney')}</h2>
+          <h2 className="section-title">Our Selected Honey Varieties</h2>
           <Slider {...settings}>
             {sliderImages.map((image, index) => (
               <div key={index} className="gallery-card">
@@ -110,7 +107,7 @@ const Gallery = () => {
       {/* Grid Section */}
       <div className="gallery-section gallery-grid">
         <div className="gallery-container">
-          <h2 className="section-title">{t('gallery.honeyproduct')}</h2>
+          <h2 className="section-title">Our Honey Production Process</h2>
           <div className="grid-container">
             {gridImages.map((image, index) => (
               <div

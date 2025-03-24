@@ -1,7 +1,7 @@
 // src/Pages/Home/Home.jsx
-import React from "react";
-import "./Home.scss";
-import honeyImage from "../../assets/bee.png";
+import React from 'react';
+import './Home.scss';
+import honeyImage from '../../assets/bee.png'; 
 
 const Home = () => {
   return (
@@ -9,10 +9,13 @@ const Home = () => {
       <div className="home-container">
         <div className="home-text">
           <p className="welcome-text">Welcome to BalBee World</p>
-          <h1>Fresh Naturally Honey</h1>
+          <h1>
+            Fresh <br />
+            Naturally <br />
+            Honey
+          </h1>
           <p className="description">
-            Discover the finest, purest honey, harvested from nature’s best.
-            Sweet, healthy, and full of flavor – perfect for every occasion.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
           </p>
           <button className="learn-more-btn">Learn More</button>
         </div>

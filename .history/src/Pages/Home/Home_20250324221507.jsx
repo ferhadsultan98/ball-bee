@@ -11,8 +11,7 @@ const Home = () => {
           <p className="welcome-text">Welcome to BalBee World</p>
           <h1>Fresh Naturally Honey</h1>
           <p className="description">
-            Discover the finest, purest honey, harvested from nature’s best.
-            Sweet, healthy, and full of flavor – perfect for every occasion.
+          Discover the finest, purest honey, harvested from nature’s best. Sweet, healthy, and full of flavor – perfect for every occasion.
           </p>
           <button className="learn-more-btn">Learn More</button>
         </div>

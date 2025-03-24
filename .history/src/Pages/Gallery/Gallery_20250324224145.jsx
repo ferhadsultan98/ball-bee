@@ -75,7 +75,7 @@ const Gallery = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
   };
-  const { t, i18n } = useTranslation();
+
   return (
     <div className="gallery">
       {/* Hero Section */}

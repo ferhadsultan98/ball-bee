@@ -18,7 +18,7 @@ import gridImage2 from '../../assets/honey1.avif';
 import gridImage3 from '../../assets/honey1.avif';
 import gridImage4 from '../../assets/honey1.avif';
 
-
+  const { t, i18n } = useTranslation();
 
 const sliderImages = [
   { src: honeyImage1, title: 'Təbii Çiçək Balı', description: 'Ən təmiz çiçəklərdən toplanmış bal.' },
@@ -75,7 +75,7 @@ const Gallery = () => {
     setIsModalOpen(false);
     setSelectedImage(null);
   };
-  const { t, i18n } = useTranslation();
+
   return (
     <div className="gallery">
       {/* Hero Section */}
@@ -90,7 +90,7 @@ const Gallery = () => {
       {/* Slider Section */}
       <div className="gallery-section gallery-slider">
         <div className="gallery-container">
-          <h2 className="section-title">{t('gallery.choosehoney')}</h2>
+          <h2 className="section-title">{t('gallery.choose')}</h2>
           <Slider {...settings}>
             {sliderImages.map((image, index) => (
               <div key={index} className="gallery-card">
@@ -110,7 +110,7 @@ const Gallery = () => {
       {/* Grid Section */}
       <div className="gallery-section gallery-grid">
         <div className="gallery-container">
-          <h2 className="section-title">{t('gallery.honeyproduct')}</h2>
+          <h2 className="section-title">Our Honey Production Process</h2>
           <div className="grid-container">
             {gridImages.map((image, index) => (
               <div
