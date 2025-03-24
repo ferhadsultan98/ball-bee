@@ -1,0 +1,413 @@
+// src/Pages/Gallery/Gallery.scss
+.gallery {
+    width: 100%;
+    background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%); // Light honey gradient
+    padding: 0;
+  
+    .gallery-section {
+      padding: 60px 20px;
+    }
+  
+    .gallery-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  
+    .section-title {
+      font-size: 2.5rem;
+      color: #4a2c00; // Dark honey brown
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Hero Section */
+    .gallery-hero {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+      }
+  
+      .hero-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff8e1; // Light honey text
+        z-index: 8;
+  
+        h1 {
+          font-size: 3.5rem;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+  
+        p {
+          font-size: 1.5rem;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  
+    /* Slider Section */
+    .gallery-slider {
+      background-color: #fff8e1; // Light honey background
+     
+  
+      .slick-slider {
+        .slick-prev,
+        .slick-next {
+          background-color: #ff9900; // Bright honey color for arrows
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          z-index: 1;
+  
+          &:before {
+            color: #fff8e1; // Light honey color for arrow icon
+            font-size: 20px;
+          }
+  
+          &:hover {
+            background-color: #e68a00; // Darker honey on hover
+          }
+        }
+  
+        .slick-prev {
+          left: -50px;
+        }
+  
+        .slick-next {
+          right: -50px;
+        }
+  
+        .slick-dots {
+          bottom: -40px;
+  
+          li button:before {
+            font-size: 12px;
+            color: #ff9900;
+          }
+  
+          li.slick-active button:before {
+            color: #e68a00;
+          }
+        }
+      }
+  
+      .gallery-card {
+        padding: 10px;
+        outline: none;
+  
+        .card-image {
+          position: relative;
+          overflow: hidden;
+          border-radius: 15px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease;
+  
+          img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+          }
+  
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+  
+        .card-content {
+          background-color: #fff8e1;
+          padding: 20px;
+          text-align: center;
+          border-radius: 0 0 15px 15px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          margin-top: -10px;
+  
+          h3 {
+            font-size: 1.5rem;
+            color: #4a2c00;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+          }
+  
+          p {
+            font-size: 1rem;
+            color: #8a5522;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  
+    /* Grid Section */
+    .gallery-grid {
+      background-color: #fff3e0; // Slightly different honey shade
+  
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+  
+      .grid-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+  
+        img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          display: block;
+        }
+  
+        .grid-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(74, 44, 0, 0.6); // Dark honey overlay
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+  
+          p {
+            color: #fff8e1;
+            font-size: 1.2rem;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px;
+          }
+        }
+  
+        &:hover {
+          transform: scale(1.03);
+  
+          .grid-overlay {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  
+    /* Custom Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+  
+    .modal-content {
+      position: relative;
+      background: #fff8e1; // Light honey background
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 90%;
+      max-height: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease-in-out;
+  
+      img {
+        max-width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+  
+      .modal-caption {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        color: #4a2c00;
+        text-align: center;
+        text-transform: uppercase;
+      }
+  
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #ff9900; // Bright honey color
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        color: #fff8e1;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #e68a00; // Darker honey on hover
+        }
+      }
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  
+    @media (max-width: 1024px) {
+      .gallery-hero {
+        height: 400px;
+  
+        .hero-overlay {
+          h1 {
+            font-size: 2.5rem;
+          }
+  
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+  
+      .gallery-slider {
+        .slick-prev {
+          left: -30px;
+        }
+  
+        .slick-next {
+          right: -30px;
+        }
+  
+        .gallery-card {
+          .card-image {
+            img {
+              height: 250px;
+            }
+          }
+  
+          .card-content {
+            h3 {
+              font-size: 1.3rem;
+            }
+  
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .gallery-hero {
+        height: 300px;
+  
+        .hero-overlay {
+          h1 {
+            font-size: 2rem;
+          }
+  
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+  
+      .section-title {
+        font-size: 2rem;
+      }
+  
+      .gallery-slider {
+        .slick-prev,
+        .slick-next {
+          display: none !important;
+        }
+  
+        .gallery-card {
+          .card-image {
+            img {
+              height: 200px;
+            }
+          }
+  
+          .card-content {
+            padding: 15px;
+  
+            h3 {
+              font-size: 1.2rem;
+            }
+  
+            p {
+              font-size: 0.85rem;
+            }
+          }
+        }
+      }
+  
+      .gallery-grid {
+        .grid-container {
+          grid-template-columns: 1fr; // Single column on mobile
+        }
+  
+        .grid-item {
+          img {
+            height: 150px;
+          }
+  
+          .grid-overlay {
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+  
+      .modal-content {
+        padding: 15px;
+  
+        img {
+          max-height: 60vh;
+        }
+  
+        .modal-caption {
+          font-size: 1rem;
+        }
+  
+        .modal-close {
+          width: 30px;
+          height: 30px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }

@@ -1,0 +1,202 @@
+// src/Pages/Home/Home.scss
+.home {
+  width: 100%;
+  min-height: calc(100vh - 80px); // Adjust for header height
+  background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  .home-container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .slide {
+    outline: none; // Remove default outline from slick slider
+    position: relative;
+
+    .slide-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      gap: 40px;
+      min-height: calc(100vh - 80px); // Adjust for header height
+    }
+
+    .slide-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-left: 40px;
+
+      h1 {
+        font-size: 3.5rem;
+        color: #4a2c00; // Dark honey brown
+        text-transform: uppercase;
+        font-weight: 800;
+        line-height: 1.2;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .description {
+        font-size: 1.2rem;
+        color: #8a5522; // Muted honey brown
+        line-height: 1.6;
+        max-width: 400px;
+      }
+
+      .learn-more-btn {
+        padding: 12px 30px;
+        background-color: #ff9900; // Bright honey color
+        color: #fff8e1; // Light honey text
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        width: fit-content;
+
+        &:hover {
+          background-color: #e68a00; // Darker honey on hover
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(255, 153, 0, 0.3);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: none;
+        }
+      }
+    }
+
+    .slide-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+
+  /* Slick Slider Custom Styles */
+  .slick-slider {
+    width: 100%;
+  }
+
+  .slick-dots {
+    bottom: 20px;
+
+    li {
+      margin: 0 5px;
+
+      button:before {
+        font-size: 12px;
+        color: #fff8e1; // Light honey dots
+        opacity: 0.5;
+        transition: opacity 0.3s;
+      }
+
+      &.slick-active button:before {
+        opacity: 1;
+        color: #ff9900; // Bright honey for active dot
+      }
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+
+    &:before {
+      font-size: 30px;
+      color: #ff9900; // Bright honey arrows
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+
+  .slick-prev {
+    left: 20px;
+  }
+
+  .slick-next {
+    right: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .slide-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+      padding: 20px;
+
+      .slide-text {
+        padding-left: 0;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        .description {
+          max-width: 100%;
+          font-size: 1rem;
+        }
+
+        .learn-more-btn {
+          margin: 0 auto;
+        }
+      }
+
+      .slide-image {
+        justify-content: center;
+
+        img {
+          max-width: 80%;
+        }
+      }
+    }
+
+    .slick-prev {
+      left: 10px;
+    }
+
+    .slick-next {
+      right: 10px;
+    }
+
+    .slick-dots {
+      bottom: 10px;
+
+      li {
+        button:before {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+    "header": {
+      "about": "About",
+      "gallery": "Gallery",
+      "products": "Products",
+      "contact": "COntact"
+    },
+    "home": {
+      "welcome": "Welcome to BalBee World",
+      "header": "Fresh Naturally Honey",
+      "description": "Discover the finest, purest honey, harvested from nature’s best. Sweet, healthy, and full of flavor – perfect for every occasion.",
+      "learnmore": "Learn More"
+    },
+    "about": {
+        "herodesc": "Discover the purest and most healing blessing of nature!",
+        "titlehead": "BalBee: The Address of Natural Honey",
+        "titledesc": "As BalBee, we present to you honey, the purest and most healing blessing of nature. Our honey, collected by the best beekeepers, is produced completely naturally, without any additives. Our mission is to support a healthy lifestyle and bring this miracle of nature to everyone.",
+        "subtitlehead": "Benefits of Honey",
+        "benefitonehead": "Energy Source:",
+        "benefitonedesc": "Provides energy throughout the day thanks to natural sugars.",
+        "benefittwohead": "Strengthens Immunity:",
+        "benefittwodesc": "Rich in antioxidants, protects against diseases.",
+        "benefitthreehead": "Wound Healing:",
+        "benefitthreedesc": "Accelerates wound healing with its antibacterial properties.",
+        "benefitfourhead": "Improves Digestion:",
+        "benefitfourdesc": "Supports the gastrointestinal system.",
+        "benefitfivehead": "Skin Health:",
+        "benefitfivedesc": "Supports skin health as a natural moisturizer."
+    },
+    "gallery": {
+        "head": "Our Honey Gallery",
+        "desc": "Discover nature's sweetest gift!",
+        "choosehoney": "Our Selected Honey Varieties",
+        "honeyproduct": "Our Honey Production Process"
+    },
+    "contact": {
+        "herodesc": "Share the sweetness of nature with us!",
+        "brandtagline": "Address of Natural Honey",
+        "infos": "Contact Information",
+        "address": "Address:",
+        "location": "Agstafa district, Garayazi forest",
+        "viewmap": "View on map",
+        "businesshours": "Business hours:",
+        "businessday": "Monday - Saturday: 09:00 - 18:00",
+        "web": "Website:",
+        "followme": ""
+    },
+    "footer": {
+        "head": "Ball-Bee",
+        "desc": "Pure Natural Honey",
+        "quicklinks": "Quick Links",
+        "phone": "Phone",
+        "email": "Email",
+        "bottom": "All rights reserved"
+    }
+  }
