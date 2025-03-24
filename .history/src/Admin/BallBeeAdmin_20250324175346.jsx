@@ -129,12 +129,12 @@ const BallBeeAdmin = () => {
 
         <div className="form-group">
           <label>Hero Title</label>
-          <textarea
+          <input
             type="text"
             name="heroTitle"
             value={formData.heroTitle}
             onChange={handleInputChange}
-          ></textarea>
+          />
         </div>
 
         <div className="form-group">
