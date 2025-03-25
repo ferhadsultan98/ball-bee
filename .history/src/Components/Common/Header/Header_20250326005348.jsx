@@ -25,7 +25,7 @@ const Header = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setIsLanguageDropdownOpen(false); 
+    setIsLanguageDropdownOpen(false); // Close dropdown after selection
     setIsMenuOpen(false); 
   };
 
