@@ -1,0 +1,386 @@
+// src/Pages/Gallery/Gallery.scss
+.gallery {
+  width: 100%;
+  background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
+  padding: 0;
+
+  .gallery-section {
+    padding: 60px 0;
+  }
+
+  .gallery-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 2.8rem;
+    color: #4a2c00;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: red;
+      border-radius: 2px;
+    }
+  }
+
+  /* Hero Section */
+  .gallery-hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+      transition: transform 0.5s ease;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff8e1;
+      z-index: 8;
+
+      h1 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  /* Cards Section */
+  .gallery-cards {
+    background-color: #fff8e1;
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); // 3 columns on desktop
+      gap: 30px;
+    }
+
+    .gallery-card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      .card-image {
+        position: relative;
+        width: 100%;
+        height: 250px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          transition: transform 0.5s ease;
+        }
+
+        .like-container {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+
+          .heart-button {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+
+            .heart-icon {
+              font-size: 1.5rem;
+
+              &.filled {
+                color: #ff4d4d; // Red color for filled heart
+              }
+            }
+
+            &:hover {
+              background: rgba(255, 255, 255, 1);
+            }
+          }
+
+          .like-count {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            color: #4a2c00;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+
+      .card-content {
+        padding: 20px;
+        text-align: center;
+
+        h3 {
+          font-size: 1.5rem;
+          color: #4a2c00;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #8a5522;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  /* Custom Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+
+  .modal-content {
+    position: relative;
+    background: #fff8e1;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+
+    img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .modal-caption {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #4a2c00;
+      text-align: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff9900;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+      color: #fff8e1;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e68a00;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .gallery-hero {
+      height: 500px;
+
+      .hero-overlay {
+        h1 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .gallery-cards {
+      .cards-container {
+        grid-template-columns: repeat(2, 1fr); // 2 columns on tablet
+      }
+
+      .gallery-card {
+        .card-image {
+          height: 200px;
+
+          .like-container {
+            .heart-button {
+              width: 35px;
+              height: 35px;
+
+              .heart-icon {
+                font-size: 1.3rem;
+              }
+            }
+
+            .like-count {
+              font-size: 0.8rem;
+              padding: 4px 8px;
+            }
+          }
+        }
+
+        .card-content {
+          h3 {
+            font-size: 1.3rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gallery-hero {
+      height: 400px;
+
+      .hero-overlay {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .section-title {
+      font-size: 2rem;
+
+      &:after {
+        width: 50px;
+      }
+    }
+
+    .gallery-cards {
+      .cards-container {
+        grid-template-columns: 1fr; // 1 column on mobile
+        gap: 20px;
+      }
+
+      .gallery-card {
+        .card-image {
+          height: 250px;
+
+          .like-container {
+            .heart-button {
+              width: 35px;
+              height: 35px;
+
+              .heart-icon {
+                font-size: 1.3rem;
+              }
+            }
+
+            .like-count {
+              font-size: 0.8rem;
+              padding: 4px 8px;
+            }
+          }
+        }
+
+        .card-content {
+          padding: 15px;
+
+          h3 {
+            font-size: 1.2rem;
+          }
+
+          p {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+
+    .modal-content {
+      padding: 15px;
+
+      img {
+        max-height: 60vh;
+      }
+
+      .modal-caption {
+        font-size: 1rem;
+      }
+
+      .modal-close {
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
