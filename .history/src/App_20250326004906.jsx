@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from "react";
-import "./App.scss";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { I18nextProvider } from "react-i18next";
-import i18n from "./Languages/i18n";
-import Layout from "./Components/Layout/Layout";
-import Home from "./Pages/Home/Home";
-import About from "./Pages/About/About";
-import Gallery from "./Pages/Gallery/Gallery";
-import Products from "./Pages/Products/Products";
-import Contact from "./Pages/Contact/Contact";
-import BallBeeAdmin from "./Components/Admin/BallBeeAdmin";
-import BallBeeLogin from "./Pages/Login/BallBeeLogin";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import React, { useState, useEffect } from 'react';
+import './App.scss';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './Languages/i18n';
+import Layout from './Components/Layout/Layout';
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
+import Gallery from './Pages/Gallery/Gallery';
+import Products from './Pages/Products/Products';
+import Contact from './Pages/Contact/Contact';
+import BallBeeAdmin from './Components/Admin/BallBeeAdmin';
+import BallBeeLogin from './Pages/Login/BallBeeLogin';
 
 const ProtectedRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/login" />;
@@ -24,7 +18,7 @@ const ProtectedRoute = ({ isAuthenticated, children }) => {
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
-    return localStorage.getItem("isAuthenticated") === "true";
+    return localStorage.getItem('isAuthenticated') === 'true';
   });
   const [loading, setLoading] = useState(true); // Loading durumunu ekledim
 
@@ -39,13 +33,21 @@ function App() {
   }, []);
 
   if (loading) {
-    return (
-      <DotLottieReact
-        src="https://lottie.host/3cb75f75-ff2f-41ca-b0b3-493f4ef6f799/YAYWSr1ZVq.lottie"
-        loop
-        autoplay
-      />
-    );
+    
+    return 
+    import React from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
+const App = () => {
+  return (
+    <DotLottieReact
+      src="https://lottie.host/3cb75f75-ff2f-41ca-b0b3-493f4ef6f799/YAYWSr1ZVq.lottie"
+      loop
+      autoplay
+    />
+  );
+};
+
   }
 
   return (
@@ -69,10 +71,7 @@ function App() {
             />
           </Route>
           {/* Login route without Header and Footer */}
-          <Route
-            path="/login"
-            element={<BallBeeLogin onLogin={setIsAuthenticated} />}
-          />
+          <Route path="/login" element={<BallBeeLogin onLogin={setIsAuthenticated} />} />
           {/* Catch-all route */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
