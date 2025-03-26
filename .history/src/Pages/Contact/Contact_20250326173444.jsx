@@ -106,7 +106,7 @@ const Contact = () => {
                       </i>
                     </li>
                   </a>
-                  <a href="https://wa.me/+994503007430?text=Salam, BalBee'dən yazıram sizə." target="_blank">
+                  <a href="https://wa.me/+994503007430?text=Salam, BalBee'dən yazıram sizə.">
                     <li className="icon whatsapp">
                       <span className="tooltip">Whatsapp</span>
                       <i>
