@@ -45,9 +45,7 @@ const Contact = () => {
                       <a href="tel:+994503007430">+994 50 300 74 30</a>
                     </div>
                   </div>
-                  <div className="contact-item">
-                    <FaEnvelope className="contact-icon" />
-                    <div>
+                  
                       
                       
                     </div>
