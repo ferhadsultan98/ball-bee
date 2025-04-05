@@ -20,9 +20,7 @@ const HeroSection = ({ titleKey, descriptionKey }) => {
         <p>{t(descriptionKey)}</p>
       </div>
       <video src={heroVideo} autoPlay loop muted></video>
-      <button className="back-btn" onClick={handleBackToHome}>
-        {t("common.backtohome")} {/* Çeviri ile geri dön metni */}
-      </button>
+      
     </div>
   );
 };
