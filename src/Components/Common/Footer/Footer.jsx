@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>{t("header.contact")}</h4>
           <p>{t("footer.phone")}: +994 50 300 74 30</p>
-          <p>{t("footer.email")}: zaursultanov@hotmail.com</p>
+          
         </div>
       </div>
       <div className="footer-bottom">
