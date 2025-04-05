@@ -48,10 +48,8 @@ const Contact = () => {
                   <div className="contact-item">
                     <FaEnvelope className="contact-icon" />
                     <div>
-                      <strong>{t("footer.email")}:</strong>
-                      <a href="mailto:zaursultanov@hotmail.com">
-                        zaursultanov@hotmail.com
-                      </a>
+                      
+                      
                     </div>
                   </div>
                 </div>
