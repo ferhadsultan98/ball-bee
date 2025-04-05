@@ -24,7 +24,7 @@ const Products = () => {
 
   const createWhatsAppLink = (productName) => {
     const phoneNumber = "+994503007430"; 
-    const message = `Salam ${productName} məhsulu üçün yazırdım sizə.`; 
+    const message = `Salam, ${productName} məhsulunu sifariş etmək istəyirəm.`; 
     const encodedMessage = encodeURIComponent(message);
     return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
   };
