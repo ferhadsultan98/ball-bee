@@ -52,12 +52,12 @@ const Contact = () => {
                     <FaMapMarkerAlt className="contact-icon" />
                     <div>
                       <strong>{t("contact.address")}:</strong>
-                      <Link to="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6" target="_blank">
+                      <Link to="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6">
                         <p>{t("contact.location")}</p>
                       </Link>
 
                       <a
-                        href="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6"
+                        href="https://maps.google.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="map-link"

@@ -57,11 +57,11 @@ const Contact = () => {
                       </Link>
 
                       <a
-                        href="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6"
+                        href="https://maps.google.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="map-link"
-                      >
+                      
                         {t("contact.viewmap")}
                       </a>
                     </div>

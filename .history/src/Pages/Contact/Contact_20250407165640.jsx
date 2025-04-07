@@ -15,7 +15,6 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import HeroSection from "../HeroSection/HeroSection";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
@@ -52,12 +51,12 @@ const Contact = () => {
                     <FaMapMarkerAlt className="contact-icon" />
                     <div>
                       <strong>{t("contact.address")}:</strong>
-                      <Link to="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6" target="_blank">
+                      <Link to="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6">
                         <p>{t("contact.location")}</p>
                       </Link>
 
                       <a
-                        href="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6"
+                        href="https://maps.google.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="map-link"

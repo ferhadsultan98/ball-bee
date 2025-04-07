@@ -7,7 +7,6 @@ import {
   FaInstagram,
   FaTiktok,
   FaPhone,
-  FaEnvelope,
   FaMapMarkerAlt,
   FaClock,
   FaGlobe,
@@ -15,7 +14,6 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import HeroSection from "../HeroSection/HeroSection";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { t, i18n } = useTranslation();
@@ -46,18 +44,17 @@ const Contact = () => {
                       <a href="tel:+994503007430">+994 50 300 74 30</a>
                     </div>
                   </div>
+                    </div>
+                  </div>
                 </div>
                 <div className="contact-row">
                   <div className="contact-item">
                     <FaMapMarkerAlt className="contact-icon" />
                     <div>
                       <strong>{t("contact.address")}:</strong>
-                      <Link to="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6" target="_blank">
-                        <p>{t("contact.location")}</p>
-                      </Link>
-
+                      <p>{t("contact.location")}</p>
                       <a
-                        href="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6"
+                        href="https://maps.google.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="map-link"
@@ -101,10 +98,7 @@ const Contact = () => {
                       </i>
                     </li>
                   </a>
-                  <a
-                    href="https://wa.me/+994503007430?text=Salam, BalBee'dən yazıram sizə."
-                    target="_blank"
-                  >
+                  <a href="https://wa.me/+994503007430?text=Salam, BalBee'dən yazıram sizə." target="_blank">
                     <li className="icon whatsapp">
                       <span className="tooltip">Whatsapp</span>
                       <i>
@@ -112,10 +106,8 @@ const Contact = () => {
                       </i>
                     </li>
                   </a>
-                  <a
-                    href="http://instagram.com/balbee_ariciliq"
-                    target="_blank"
-                  >
+                  <a href="http://instagram.com/balbee_ariciliq" target="_blank">
+                  
                     <li className="icon instagram">
                       <span className="tooltip">Instagram</span>
                       <i>

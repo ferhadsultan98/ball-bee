@@ -56,14 +56,11 @@ const Contact = () => {
                         <p>{t("contact.location")}</p>
                       </Link>
 
-                      <a
-                        href="https://maps.app.goo.gl/xrmHfxnG1wTuyCmz6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="map-link"
-                      >
+                      <Link>
+                        
+                      
                         {t("contact.viewmap")}
-                      </a>
+                        </Link>
                     </div>
                   </div>
                   <div className="contact-item">
