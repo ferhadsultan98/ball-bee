@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "./HoneyComponent.scss";
 import { useTranslation } from "react-i18next";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
 
 const HoneyComponent = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,16 +47,15 @@ const HoneyComponent = () => {
 
         <h1 className="title">BallBee</h1>
         <h2 className="subtitle">{t("footer.desc")}</h2>
-        <Link to="/products">
-          <button className="honey-button">
-            <span className="button-text">{t("details.viewProducts")}</span>
-            <span className="button-icon">
-              <i>
-                <FaArrowRightLong />
-              </i>
-            </span>
-          </button>
-        </Link>
+
+        <button className="honey-button">
+          <span className="button-text">{t("details.viewProducts")}</span>
+          <span className="button-icon">
+            <i>
+              <FaArrowRightLong />
+            </i>
+          </span>
+        </button>
       </div>
     </div>
   );

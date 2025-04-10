@@ -48,15 +48,15 @@ const HoneyComponent = () => {
 
         <h1 className="title">BallBee</h1>
         <h2 className="subtitle">{t("footer.desc")}</h2>
-        <Link to="/products">
-          <button className="honey-button">
-            <span className="button-text">{t("details.viewProducts")}</span>
-            <span className="button-icon">
-              <i>
-                <FaArrowRightLong />
-              </i>
-            </span>
-          </button>
+<Link>
+        <button className="honey-button">
+          <span className="button-text">{t("details.viewProducts")}</span>
+          <span className="button-icon">
+            <i>
+              <FaArrowRightLong />
+            </i>
+          </span>
+        </button>
         </Link>
       </div>
     </div>
