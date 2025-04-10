@@ -1,0 +1,65 @@
+// SignatureBar.scss
+.signature-bar {
+    width: 100%;
+    background: linear-gradient(90deg, #ffbf00, #f9e4b7); // Bal sarısından açık tona geçiş
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; // Düşük yükseklik
+    border-top: 1px solid #fff3e0;
+    border-bottom: 1px solid #fff3e0;
+  
+    &__content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #333;
+      font-family: 'Arial', sans-serif;
+    }
+  
+    &__icon {
+      font-size: 20px;
+      animation: buzz 1.5s infinite;
+    }
+  
+    &__text {
+      font-size: 16px;
+      font-weight: 500;
+      white-space: nowrap; // Metnin taşmasını engeller
+    }
+  
+    // Arı efekti için animasyon
+    @keyframes buzz {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-3px) rotate(-5deg); }
+      75% { transform: translateX(3px) rotate(5deg); }
+    }
+  
+    // Responsive Tasarım
+    @media (max-width: 768px) {
+      padding: 8px 15px;
+      height: 35px;
+  
+      &__icon {
+        font-size: 18px;
+      }
+  
+      &__text {
+        font-size: 14px;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      padding: 5px 10px;
+      height: 30px;
+  
+      &__icon {
+        font-size: 16px;
+      }
+  
+      &__text {
+        font-size: 12px;
+      }
+    }
+  }

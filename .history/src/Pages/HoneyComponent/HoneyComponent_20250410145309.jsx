@@ -1,0 +1,59 @@
+// HoneyComponent.jsx
+import React, { useState, useEffect } from 'react';
+import './HoneyComponent.scss';
+import { useTranslation } from 'react-i18next';
+
+const HoneyComponent = ({ title = "Balbee", subtitle = "Sweet Natural Honey", buttonText = "Discover More" }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    setIsVisible(true);
+    
+    const handleScroll = () => {
+      const honeyElements = document.querySelectorAll('.honey-drop');
+      honeyElements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        if (position.top < window.innerHeight) {
+          element.classList.add('dripping');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  return (
+    <div className={`honey-component ${isVisible ? 'visible' : ''}`}>
+      <div className="honey-background">
+        {[...Array(6)].map((_, i) => (
+          <div key={i} className="honey-drop" />
+        ))}
+        <div className="honeycomb">
+          {[...Array(12)].map((_, i) => (
+            <div key={i} className="cell" />
+          ))}
+        </div>
+      </div>
+      
+      <div className="content-container">
+        <div className="bee-icon">
+          <div className="bee-body"></div>
+          <div className="bee-wing wing-left"></div>
+          <div className="bee-wing wing-right"></div>
+          <div className="bee-stinger"></div>
+        </div>
+        
+        <h1 className="title">BallBee</h1>
+        <h2 className="subtitle">{subtitle}</h2>
+        
+        <button className="honey-button">
+          <span className="button-text">{buttonText}</span>
+          <span className="button-icon">→</span>
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default HoneyComponent;
