@@ -19,7 +19,9 @@
   },
   "details": {
     "exploreTopics": "Bal Haqqında",
-
+    "mainContent": "Əsas Məzmun",
+    "keyPoints": "Əsas Nöqtələr",
+    "conclusion": "Nəticə",
     "backToHome": "Ana Səhifəyə Qayıt",
     "viewProducts": "Məhsullara Bax",
     "healthbenefits": {

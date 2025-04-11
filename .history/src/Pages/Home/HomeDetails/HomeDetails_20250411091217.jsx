@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "./HomeDetails.scss";
 
-
+// Import the same images
 import healthbenefits from "../../../assets/Homes/healthbenefit.jpg";
 import honeyhistory from "../../../assets/Homes/honehhistory.jpg";
 import naturehoney from "../../../assets/Homes/naturehoney.jpg";
@@ -25,7 +25,6 @@ const HomeDetails = () => {
         t("details.healthbenefits.point2"),
         t("details.healthbenefits.point3"),
         t("details.healthbenefits.point4"),
-        t("details.honeyfood.point3"),
       ],
       conclusion: t("details.conclusion"),
     },

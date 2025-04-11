@@ -25,7 +25,6 @@ const HomeDetails = () => {
         t("details.healthbenefits.point2"),
         t("details.healthbenefits.point3"),
         t("details.healthbenefits.point4"),
-        t("details.honeyfood.point3"),
       ],
       conclusion: t("details.conclusion"),
     },

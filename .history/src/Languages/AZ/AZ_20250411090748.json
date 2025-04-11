@@ -11,15 +11,17 @@
     "healthbenefitsdesc": "Bal, yüksək vitamin və mineral tərkibi ilə immun sistemini gücləndirir və eyni zamanda zədələnmiş toxumaların bərpasına kömək edir.",
     "honeyhistoryhead": "Balın Tarixi",
     "honeyhistorydesc": "Balın istifadəsi qədim dövrlərə, hətta Misir mədəniyyətinə qədər gedib çıxır. Arxeoloqlar balın 3,000 ildən çoxdur istifadə edildiyini aşkar ediblər.",
-    "naturehoneyhead": "Balın Hazırlanması",
+    "naturehoneyhead": "Balın Təbii Yaradılışı",
     "naturehoneydesc": "Bal, arıların çiçəklərdən topladıqları nektardan təbii olaraq istehsal olunur. Bu prosesdə heç bir kimyəvi maddə və ya əlavələrdən istifadə edilmir.",
-    "honeyfoodhead": "Bal Qida Formasında",
+    "honeyfoodhead": "Balın Qida Rolu",
     "honeyfooddesc": "Bal qədim dövrlərdən həm qida, həm də dərman kimi istifadə olunub. O, sürətli enerji qaynağı və təbii antibiotik kimi tanınır.",
     "customerReviews": "Müştəri rəyləri"
   },
   "details": {
     "exploreTopics": "Bal Haqqında",
-
+    "mainContent": "Əsas Məzmun",
+    "keyPoints": "Əsas Nöqtələr",
+    "conclusion": "Nəticə",
     "backToHome": "Ana Səhifəyə Qayıt",
     "viewProducts": "Məhsullara Bax",
     "healthbenefits": {

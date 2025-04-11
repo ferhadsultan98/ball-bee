@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import "./HomeDetails.scss";
 
-
+// Import the same images
 import healthbenefits from "../../../assets/Homes/healthbenefit.jpg";
 import honeyhistory from "../../../assets/Homes/honehhistory.jpg";
 import naturehoney from "../../../assets/Homes/naturehoney.jpg";
@@ -19,20 +19,19 @@ const HomeDetails = () => {
     healthbenefits: {
       title: t("home.healthbenefitshead"),
       image: healthbenefits,
-
+     
       bulletPoints: [
         t("details.healthbenefits.point1"),
         t("details.healthbenefits.point2"),
         t("details.healthbenefits.point3"),
         t("details.healthbenefits.point4"),
-        t("details.honeyfood.point3"),
       ],
       conclusion: t("details.conclusion"),
     },
     honeyhistory: {
       title: t("home.honeyhistoryhead"),
       image: honeyhistory,
-
+     
       bulletPoints: [
         t("details.honeyhistory.point1"),
         t("details.honeyhistory.point2"),
@@ -44,7 +43,7 @@ const HomeDetails = () => {
     naturehoney: {
       title: t("home.naturehoneyhead"),
       image: naturehoney,
-
+      mainContent: t("details.mainContent"),
       bulletPoints: [
         t("details.naturehoney.point1"),
         t("details.naturehoney.point2"),
@@ -56,7 +55,7 @@ const HomeDetails = () => {
     honeyfood: {
       title: t("home.honeyfoodhead"),
       image: honeyfood,
-
+      mainContent: t("details.mainContent"),
       bulletPoints: [
         t("details.honeyfood.point1"),
         t("details.honeyfood.point2"),
@@ -123,12 +122,20 @@ const HomeDetails = () => {
         </div>
 
         <div className="details-content">
+          <div className="main-text">
+            <p>{currentTopicData.mainContent}</p>
+          </div>
+
           <div className="key-points">
             <ul>
               {currentTopicData.bulletPoints.map((point, index) => (
                 <li key={index}>{point}</li>
               ))}
             </ul>
+          </div>
+
+          <div className="conclusion">
+            <p>{currentTopicData.conclusion}</p>
           </div>
 
           <div className="actions">
