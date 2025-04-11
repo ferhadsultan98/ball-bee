@@ -3,7 +3,6 @@ import React from "react";
 import "./Footer.scss";
 import { useTranslation } from "react-i18next";
 import logo from "../../../assets/ballbeelogo.png";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
@@ -35,15 +34,12 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>{t("header.contact")}</h4>
           <p>{t("footer.phone")}: +994 50 300 74 30</p>
+          
         </div>
       </div>
       <div className="footer-bottom">
         <p>&copy; 2025 BalBee. {t("footer.bottom")}.</p>
-        <p>
-          <Link to="https://www.instagram.com/ferhad.sultann/" target="_blank">
-            {t("common.createdby")}
-          </Link>
-        </p>
+        <p>{t("common.createdby")}</p>
       </div>
     </footer>
   );

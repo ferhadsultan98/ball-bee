@@ -4,7 +4,7 @@
   background-color: #4a2c00; // Dark honey brown
   color: #fff8e1; // Light honey text
   padding: 40px 0;
-
+link
   .footer-container {
     margin: 0 auto;
     display: grid;
@@ -87,14 +87,6 @@
     .footer-container {
       grid-template-columns: 1fr;
       text-align: center;
-    }
-  }
-  a {
-    color: inherit;
-    text-decoration: none;
-    transition: 0.5s ease-in-out;
-    &:hover{
-      text-decoration: underline;
     }
   }
 }

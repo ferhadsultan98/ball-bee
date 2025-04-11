@@ -35,15 +35,13 @@ const Footer = () => {
         <div className="footer-contact">
           <h4>{t("header.contact")}</h4>
           <p>{t("footer.phone")}: +994 50 300 74 30</p>
+          
         </div>
       </div>
       <div className="footer-bottom">
         <p>&copy; 2025 BalBee. {t("footer.bottom")}.</p>
-        <p>
-          <Link to="https://www.instagram.com/ferhad.sultann/" target="_blank">
-            {t("common.createdby")}
-          </Link>
-        </p>
+        <p><Link to="https://www.instagram.com/ferhad.sultann/" style={{}}>{t("common.createdby")}</Link></p>
+       
       </div>
     </footer>
   );
