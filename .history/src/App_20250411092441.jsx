@@ -45,7 +45,7 @@ function App() {
       });
     }, 100);
     
-
+    // Set a timer to hide loader after completion
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);

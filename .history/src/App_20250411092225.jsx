@@ -17,9 +17,9 @@ import Contact from "./Pages/Contact/Contact";
 import BallBeeAdmin from "./Components/Admin/BallBeeAdmin";
 import BallBeeLogin from "./Pages/Login/BallBeeLogin";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import ScroolButton from "./Components/ScroolButton/ScroolButton";
-import BeeLoader from "./Components/Loading/BeeLoader";
+import Loading from "./Components/Loading/BeeLoader";
 import HomeDetails from "./Pages/Home/HomeDetails/HomeDetails";
+import ScroolButton from "./Components/ScroolButton/ScroolButton";
 
 const ProtectedRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/login" />;
@@ -30,34 +30,17 @@ function App() {
     return localStorage.getItem("isAuthenticated") === "true";
   });
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate loading progress
-    const progressInterval = setInterval(() => {
-      setProgress(oldProgress => {
-        const newProgress = oldProgress + 5;
-        if (newProgress >= 100) {
-          clearInterval(progressInterval);
-          return 100;
-        }
-        return newProgress;
-      });
-    }, 100);
-    
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
 
-    return () => {
-      clearTimeout(timer);
-      clearInterval(progressInterval);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    return <BeeLoader progress={progress} />;
+    return <Loading />;
   }
 
   return (

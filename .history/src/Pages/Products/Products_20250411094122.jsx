@@ -65,7 +65,7 @@ const Products = () => {
                 </div>
               ))
             ) : (
-              <p className="no-products">{t("common.noproduct")}</p>
+              <p className="no-products">{t("common.np")}</p>
             )}
           </div>
         </div>

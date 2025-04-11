@@ -19,7 +19,6 @@ import BallBeeLogin from "./Pages/Login/BallBeeLogin";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import ScroolButton from "./Components/ScroolButton/ScroolButton";
 import BeeLoader from "./Components/Loading/BeeLoader";
-import HomeDetails from "./Pages/Home/HomeDetails/HomeDetails";
 
 const ProtectedRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/login" />;
@@ -45,7 +44,7 @@ function App() {
       });
     }, 100);
     
-
+    // Set a timer to hide loader after completion
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
