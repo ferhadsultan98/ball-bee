@@ -45,7 +45,7 @@ const GalleryAdmin = () => {
   };
 
   const handleAddOrSaveItem = async () => {
-    if (!formItem.title || !formItem.description || !formItem.src) {
+    if (!formItem.title || !formItem.src) {
       alert('Please fill all fields');
       return;
     }
