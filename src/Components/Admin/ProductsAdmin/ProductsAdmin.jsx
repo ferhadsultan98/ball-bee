@@ -200,13 +200,13 @@ const ProductsAdmin = () => {
                     className="edit-btn"
                     onClick={() => handleEditProduct(index)}
                   >
-                    Sil
+                    Düzəlt
                   </button>
                   <button
                     className="remove-btn"
                     onClick={() => handleRemoveProduct(index)}
                   >
-                    Düzəlt
+                    Sil
                   </button>
                 </div>
               </div>
