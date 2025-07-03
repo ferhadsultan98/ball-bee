@@ -12,6 +12,7 @@ const About = () => {
     <div className="about">
       <HeroSection titleKey="header.about" descriptionKey="about.herodesc" />
 
+      {/* Content Section */}
       <div className="about-section">
         <div className="about-container">
           <div className="about-content">
