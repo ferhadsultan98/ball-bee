@@ -1,0 +1,259 @@
+// src/Pages/About/About.scss
+.about {
+  width: 100%;
+  background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
+  padding: 0;
+
+  /* Hero Section */
+  .about-hero {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    z-index: 9;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff8e1;
+      z-index: 8;
+
+      h1 {
+        font-size: 3.5rem;
+
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      p {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  /* Content Section */
+  .about-section {
+    padding: 60px 20px;
+  }
+
+  .about-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-text {
+    flex: 1;
+
+    h2 {
+      font-size: 2rem;
+      color: #ff9900;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #8a5522;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: #4a2c00;
+      margin-bottom: 30px;
+ 
+    
+      position: relative;
+      text-align: center;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: #ff9900;
+        border-radius: 2px;
+      }
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 0;
+
+      .benefit-item {
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+          content: '🐝'; // Bee icon as a decorative element
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 2rem;
+          opacity: 0.1;
+          transition: opacity 0.3s ease;
+        }
+
+        strong {
+          font-size: 1.2rem;
+          color: #4a2c00;
+          font-weight: 700;
+          display: block;
+          margin-bottom: 10px;
+      
+        }
+
+        p {
+          font-size: 1rem;
+          color: #8a5522;
+          line-height: 1.6;
+          margin: 0;
+      
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+          &:before {
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+
+  .about-video {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;  
+    height: 90vh;
+
+    video {
+      max-width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      transition: 0.5s;
+
+      &:hover {
+        filter: drop-shadow(1px 6px 12px #8a5522);
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .about-hero {
+      height: 400px;
+
+      .hero-overlay {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      height: 300px;
+
+      .hero-overlay {
+        h1 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .about-section {
+      padding: 40px 20px;
+    }
+
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .about-text {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+
+        &:after {
+          width: 50px;
+        }
+      }
+
+      .benefits-list {
+        .benefit-item {
+          padding: 15px;
+
+          strong {
+            font-size: 1.1rem;
+          }
+
+          p {
+            font-size: 0.9rem;
+          }
+
+          &:before {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .about-video {
+      justify-content: center;
+
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+}
