@@ -61,7 +61,7 @@ function App() {
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 00);
 
     return () => {
       clearTimeout(timer);

@@ -67,7 +67,7 @@ const Home = () => {
   const { t } = useTranslation();
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 2000,
     slidesToShow: 1,
