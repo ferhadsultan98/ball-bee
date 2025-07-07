@@ -6,8 +6,8 @@ import './GalleryAdmin.scss';
 
 const GalleryAdmin = () => {
   const [galleryData, setGalleryData] = useState([]);
-  const [formItem, setFormItem] = useState({ title: '', description: '', src: '' });
-  const [editIndex, setEditIndex] = useState(null);
+  const [formItem, setFormItem] = useState({ title: '', description: '', src: '' }); // Unified state for form
+  const [editIndex, setEditIndex] = useState(null); // Track which item is being edited (null for add mode)
   const cloudinaryPreset = "farhadsultan";
   const cloudinaryCloudName = "dbiltdpxh";
 
@@ -52,17 +52,19 @@ const GalleryAdmin = () => {
 
     let updatedGallery;
     if (editIndex !== null) {
+      // Edit mode: Update the existing item
       updatedGallery = [...galleryData];
       updatedGallery[editIndex] = { ...formItem, likes: updatedGallery[editIndex].likes };
     } else {
+      // Add mode: Add a new item
       updatedGallery = [...galleryData, { ...formItem, likes: 0 }];
     }
 
     try {
       await set(ref(db, 'gallery'), updatedGallery);
       setGalleryData(updatedGallery);
-      setFormItem({ title: '', description: '', src: '' });
-      setEditIndex(null);
+      setFormItem({ title: '', description: '', src: '' }); // Reset form
+      setEditIndex(null); // Exit edit mode
     } catch (error) {
       console.error(`Error ${editIndex !== null ? 'updating' : 'adding'} gallery item:`, error);
       alert(`Failed to ${editIndex !== null ? 'update' : 'add'} gallery item`);
@@ -71,12 +73,12 @@ const GalleryAdmin = () => {
 
   const handleEditItem = (index) => {
     setEditIndex(index);
-    setFormItem({ ...galleryData[index] });
+    setFormItem({ ...galleryData[index] }); // Pre-fill form with the selected item's data
   };
 
   const handleCancelEdit = () => {
     setEditIndex(null);
-    setFormItem({ title: '', description: '', src: '' });
+    setFormItem({ title: '', description: '', src: '' }); // Reset form
   };
 
   const handleRemoveItem = async (index) => {
@@ -94,6 +96,7 @@ const GalleryAdmin = () => {
     <div className="gallery-admin">
       <h2>Gallery Management</h2>
 
+      {/* Unified Form for Add/Edit */}
       <div className="form-section">
         <h3>{editIndex !== null ? 'Edit Item' : 'Add New Item'}</h3>
         <input
@@ -107,22 +110,10 @@ const GalleryAdmin = () => {
           value={formItem.description}
           onChange={(e) => setFormItem((prev) => ({ ...prev, description: e.target.value }))}
         />
-        <input
-          type="file"
-          onChange={handleImageUpload}
-          accept="image/*"
-        />
+        <input type="file" onChange={handleImageUpload} />
         {formItem.src && (
           <div className="image-preview">
             <img src={formItem.src} alt="Preview" />
-            {editIndex !== null && (
-              <button
-                className="replace-image-btn"
-                onClick={() => document.querySelector('input[type="file"]').click()}
-              >
-                Replace Image
-              </button>
-            )}
           </div>
         )}
         <div className="form-buttons">
@@ -137,6 +128,7 @@ const GalleryAdmin = () => {
         </div>
       </div>
 
+      {/* Gallery List as Cards */}
       <div className="gallery-list">
         {galleryData.length === 0 ? (
           <p>No gallery items available.</p>
