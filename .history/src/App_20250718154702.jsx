@@ -21,6 +21,7 @@ import BallBeeLogin from "./Pages/Login/BallBeeLogin";
 import ScrollButton from "./Components/ScroolButton/ScroolButton"; // Fixed typo in import
 import BeeLoader from "./Components/Loading/BeeLoader";
 import HomeDetails from "./Pages/Home/HomeDetails/HomeDetails";
+import BlogPage from "./Pages/Blog/BlogPage";
 
 const ProtectedRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/login" />;
@@ -84,6 +85,7 @@ function App() {
             <Route path="gallery" element={<Gallery />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:productId" element={<ProductDetails />} />
+            <Route path="blog" element={<BlogPage />} />
             <Route path="contact" element={<Contact />} />
             <Route path="details/:topicId" element={<HomeDetails />} />
           </Route>

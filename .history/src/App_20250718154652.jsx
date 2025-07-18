@@ -85,6 +85,7 @@ function App() {
             <Route path="products" element={<Products />} />
             <Route path="products/:productId" element={<ProductDetails />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="details/:topicId" element={<HomeDetails />} />
           </Route>
 

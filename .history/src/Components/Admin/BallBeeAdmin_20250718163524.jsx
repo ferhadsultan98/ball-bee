@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import GalleryAdmin from './GalleryAdmin/GalleryAdmin';
 import ProductsAdmin from './ProductsAdmin/ProductsAdmin';
-import BlogAdmin from './BlogAdmin/BlogAdmin'; // Import BlogAdmin
+import BlogAdmin from './'; // Import BlogAdmin
 import { GiHamburgerMenu } from 'react-icons/gi'; // Hamburger menu icon
 import { FaTimes } from 'react-icons/fa'; // Close icon for sidebar
 import logo from '../../assets/ballbeelogo.png';

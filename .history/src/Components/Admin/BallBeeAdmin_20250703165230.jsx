@@ -1,3 +1,4 @@
+// src/Pages/BallBeeAdmin/BallBeeAdmin.jsx
 import React, { useState, useEffect } from 'react';
 import './BallBeeAdmin.scss';
 import { ref, set, onValue, db } from '../../Firebase/Firebase';
@@ -5,7 +6,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import GalleryAdmin from './GalleryAdmin/GalleryAdmin';
 import ProductsAdmin from './ProductsAdmin/ProductsAdmin';
-import BlogAdmin from './BlogAdmin/BlogAdmin'; // Import BlogAdmin
 import { GiHamburgerMenu } from 'react-icons/gi'; // Hamburger menu icon
 import { FaTimes } from 'react-icons/fa'; // Close icon for sidebar
 import logo from '../../assets/ballbeelogo.png';
@@ -54,15 +54,11 @@ const BallBeeAdmin = () => {
         return <GalleryAdmin />;
       case 'products':
         return <ProductsAdmin />;
-      case 'blog':
-        return <BlogAdmin />; // Render BlogAdmin
       default:
-        return (
-          <div className="default-content">
-            BallBee Admin
-            <img src={logo} alt="Logo" />
-          </div>
-        );
+        return <div className="default-content">
+          BallBee Admin
+          <img src={logo} alt="Logo" />
+          </div>;
     }
   };
 
@@ -86,12 +82,12 @@ const BallBeeAdmin = () => {
         <div className="sidebar-nav">
           <button onClick={() => handleNavClick('gallery')}>Qalareya</button>
           <button onClick={() => handleNavClick('products')}>Məhsullar</button>
-          <button onClick={() => handleNavClick('blog')}>Blog</button> {/* Add Blog button */}
         </div>
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>
       </div>
+
 
       <div className="main-content">
         {renderContent()}

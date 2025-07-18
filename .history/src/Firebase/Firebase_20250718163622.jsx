@@ -20,4 +20,4 @@ const auth = getAuth(app);
 const analytics = getAnalytics(app);
 
 // Export all necessary Firebase functions and instances
-export { db, auth, analytics, ref, set, onValue, update, remove };
+export { db, auth, analytics, ref, set, onValue, update };

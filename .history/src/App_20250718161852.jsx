@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
   Navigate,
-  useLocation, // Import useLocation
+  useLocation,
 } from "react-router-dom";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./Languages/i18n";
@@ -18,26 +18,27 @@ import ProductDetails from "./Pages/Products/ProductDetails";
 import Contact from "./Pages/Contact/Contact";
 import BallBeeAdmin from "./Components/Admin/BallBeeAdmin";
 import BallBeeLogin from "./Pages/Login/BallBeeLogin";
-import ScrollButton from "./Components/ScroolButton/ScroolButton"; // Fixed typo in import
+import ScrollButton from "./Components/ScroolButton/ScroolButton";
 import BeeLoader from "./Components/Loading/BeeLoader";
 import HomeDetails from "./Pages/Home/HomeDetails/HomeDetails";
+import BlogPage from "./Pages/Blog/BlogPage";
+
 
 const ProtectedRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/login" />;
 };
 
-// Create a ScrollToTop component to handle scrolling on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Smooth scrolling for better UX
+      behavior: "smooth",
     });
-  }, [pathname]); // Trigger on pathname change
+  }, [pathname]);
 
-  return null; // This component doesn't render anything
+  return null;
 }
 
 function App() {
@@ -76,7 +77,7 @@ function App() {
   return (
     <I18nextProvider i18n={i18n}>
       <Router>
-        <ScrollToTop /> {/* Add ScrollToTop component */}
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -84,6 +85,8 @@ function App() {
             <Route path="gallery" element={<Gallery />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:productId" element={<ProductDetails />} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/:postId" element={<BlogDetails />} />
             <Route path="contact" element={<Contact />} />
             <Route path="details/:topicId" element={<HomeDetails />} />
           </Route>
@@ -104,7 +107,7 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-        <ScrollButton /> 
+        <ScrollButton />
       </Router>
     </I18nextProvider>
   );

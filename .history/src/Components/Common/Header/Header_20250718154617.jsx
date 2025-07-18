@@ -1,10 +1,10 @@
 // src/components/Header.jsx
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import "./Header.scss";
-import logo from "../../../assets/ballbeelogo.png";
-import { TbWorld } from "react-icons/tb"; // Globe icon
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import './Header.scss';
+import logo from '../../../assets/ballbeelogo.png';
+import { TbWorld } from 'react-icons/tb'; // Globe icon
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -25,8 +25,8 @@ const Header = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setIsLanguageDropdownOpen(false);
-    setIsMenuOpen(false);
+    setIsLanguageDropdownOpen(false); 
+    setIsMenuOpen(false); 
   };
 
   return (
@@ -38,65 +38,53 @@ const Header = () => {
           </NavLink>
         </div>
         <button className="hamburger" onClick={toggleMenu}>
-          <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
-          <span className={`hamburger-line ${isMenuOpen ? "open" : ""}`}></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
         </button>
-        <nav className={`navbar ${isMenuOpen ? "open" : ""}`}>
+        <nav className={`navbar ${isMenuOpen ? 'open' : ''}`}>
           <ul>
             <li>
               <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
-                {t("header.about")}
+                {t('header.about')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/gallery" onClick={() => setIsMenuOpen(false)}>
-                {t("header.gallery")}
+                {t('header.gallery')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/products" onClick={() => setIsMenuOpen(false)}>
-                {t("header.products")}
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/blog" onClick={() => setIsMenuOpen(false)}>
-                Blog
+                {t('header.products')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
-                {t("header.contact")}
+                {t('header.contact')}
               </NavLink>
             </li>
-
+            
             <li className="language-switcher">
-              <button
-                className="language-toggle"
-                onClick={toggleLanguageDropdown}
-              >
+              <button className="language-toggle" onClick={toggleLanguageDropdown}>
                 <TbWorld className="globe-icon" />
               </button>
-              <div
-                className={`language-dropdown ${
-                  isLanguageDropdownOpen ? "open" : ""
-                }`}
-              >
+              <div className={`language-dropdown ${isLanguageDropdownOpen ? 'open' : ''}`}>
                 <button
-                  className={i18n.language === "az" ? "active" : ""}
-                  onClick={() => changeLanguage("az")}
+                  className={i18n.language === 'az' ? 'active' : ''}
+                  onClick={() => changeLanguage('az')}
                 >
                   AZ
                 </button>
                 <button
-                  className={i18n.language === "en" ? "active" : ""}
-                  onClick={() => changeLanguage("en")}
+                  className={i18n.language === 'en' ? 'active' : ''}
+                  onClick={() => changeLanguage('en')}
                 >
                   EN
                 </button>
                 <button
-                  className={i18n.language === "ru" ? "active" : ""}
-                  onClick={() => changeLanguage("ru")}
+                  className={i18n.language === 'ru' ? 'active' : ''}
+                  onClick={() => changeLanguage('ru')}
                 >
                   RU
                 </button>

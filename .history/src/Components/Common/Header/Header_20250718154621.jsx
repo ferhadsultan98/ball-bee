@@ -60,7 +60,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/blog" onClick={() => setIsMenuOpen(false)}>
+              <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
                 Blog
               </NavLink>
             </li>
