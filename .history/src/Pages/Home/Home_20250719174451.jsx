@@ -106,7 +106,7 @@ const Home = () => {
                       <i>
                         <IoIosArrowForward />
                       </i>
-                    </div>
+                    </button>
                   </Link>
                 </div>
               </div>

@@ -1,7 +1,11 @@
-/* Import Nunito from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&display=swap');
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: url("./assets/Fonts/Quicksand-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-$font-family-regular: "Nunito", sans-serif;
+$font-family-regular: "Quicksand-Regular", "Roboto", sans-serif;
 
 * {
   margin: 0;
@@ -30,6 +34,7 @@ $font-family-regular: "Nunito", sans-serif;
 ::-webkit-scrollbar-thumb:hover {
   background: #e68a00;
 }
+
 
 ::-webkit-scrollbar-button {
   display: none;

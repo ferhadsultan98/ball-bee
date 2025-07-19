@@ -1,5 +1,5 @@
 // src/components/Header.scss
-@import "../../../App.scss";
+@import "../../../assets/Fonts/Fonts.scss";
 
 .header {
   width: 100%;
@@ -9,7 +9,7 @@
   position: fixed; // Fixed header
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 8;
   font-family: $font-family-regular, sans-serif;
 
   .header-container {
@@ -76,7 +76,7 @@
           text-decoration: none;
           color: #4a2c00; // Dark honey brown
           font-size: 1.1rem;
-          font-weight: 600;
+    
           text-transform: uppercase;
           transition: color 0.3s;
 

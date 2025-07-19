@@ -101,12 +101,12 @@ const Home = () => {
                   <h1>{slide.title}</h1>
                   <p className="description">{slide.description}</p>
                   <Link to={`/details/${slide.topic}`} style={{textDecoration: "none"}}>
-                    <div className="learn-more-btn">
+                    <button className="learn-more-btn">
                       {t("home.learnmore")}{" "}
                       <i>
                         <IoIosArrowForward />
                       </i>
-                    </div>
+                    </button>
                   </Link>
                 </div>
               </div>

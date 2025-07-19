@@ -78,7 +78,7 @@ const Contact = () => {
                   <div className="contact-item">
                     <FaGlobe className="contact-icon" />
                     <div>
-                      <strong>{t("contact.web")}</strong>
+                      <strong>{t("contact.web")}:</strong>
                       <a
                         href="https://balbee.az"
                         target="_blank"

@@ -1,5 +1,5 @@
 // src/components/Header.scss
-@import "../../../App.scss";
+@import "../../../assets/Fonts/Fonts.scss";
 
 .header {
   width: 100%;
@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  font-family: $font-family-regular, sans-serif;
+  font-family: $font-family-regular;
 
   .header-container {
     margin: 0 auto;

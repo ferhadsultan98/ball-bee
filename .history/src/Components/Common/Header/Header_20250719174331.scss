@@ -1,12 +1,12 @@
 // src/components/Header.scss
-@import "../../../App.scss";
+@import "../../../assets/Fonts/Fonts.scss";
 
 .header {
   width: 100%;
   background-color: #fff8e1; // Light honey background
   padding: 10px 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: fixed; // Fixed header
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -14,6 +14,7 @@
 
   .header-container {
     margin: 0 auto;
+    max-width: 1200px; // Added to constrain content width
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,8 +23,8 @@
 
   .logo {
     img {
-      height: 70px; // Adjust based on your logo size
-      transition: 0.3s;
+      height: 70px;
+      transition: transform 0.3s ease, filter 0.3s ease;
 
       &:hover {
         transform: scale(1.05);
@@ -33,7 +34,7 @@
   }
 
   .hamburger {
-    display: none; // Hidden on desktop
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
@@ -44,21 +45,23 @@
       display: block;
       width: 25px;
       height: 3px;
-      background-color: #4a2c00; // Dark honey brown
+      background-color: #4a2c00;
       margin: 5px 0;
       transition: all 0.3s ease-in-out;
     }
 
-    .hamburger-line.open:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
+    &.open {
+      .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
 
-    .hamburger-line.open:nth-child(2) {
-      opacity: 0;
-    }
+      .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
 
-    .hamburger-line.open:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
+      .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
     }
   }
 
@@ -74,18 +77,18 @@
       li {
         a {
           text-decoration: none;
-          color: #4a2c00; // Dark honey brown
+          color: #4a2c00;
           font-size: 1.1rem;
           font-weight: 600;
           text-transform: uppercase;
-          transition: color 0.3s;
+          transition: color 0.3s ease;
 
           &:hover {
-            color: #ff9900; // Bright honey on hover
+            color: #ff9900;
           }
 
           &.active {
-            color: #ff9900; // Active link color
+            color: #ff9900;
             border-bottom: 2px solid #ff9900;
           }
         }
@@ -103,11 +106,11 @@
 
             .globe-icon {
               font-size: 1.8rem;
-              color: #4a2c00; // Dark honey brown
-              transition: color 0.3s;
+              color: #4a2c00;
+              transition: color 0.3s ease;
 
               &:hover {
-                color: #ff9900; // Bright honey on hover
+                color: #ff9900;
               }
             }
           }
@@ -116,7 +119,7 @@
             position: absolute;
             top: 100%;
             right: 0;
-            background-color: #fff8e1; // Light honey background
+            background-color: #fff8e1;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             overflow: hidden;
@@ -126,7 +129,7 @@
             z-index: 1000;
 
             &.open {
-              max-height: 200px; // Adjust based on content height
+              max-height: 200px;
               opacity: 1;
             }
 
@@ -136,7 +139,7 @@
               background: none;
               border: none;
               padding: 10px 20px;
-              color: #4a2c00; // Dark honey brown
+              color: #4a2c00;
               font-size: 1rem;
               font-weight: 600;
               text-transform: uppercase;
@@ -144,12 +147,12 @@
               transition: background-color 0.3s ease, color 0.3s ease;
 
               &:hover {
-                background-color: #ff9900; // Bright honey on hover
-                color: #fff8e1; // Light honey text
+                background-color: #ff9900;
+                color: #fff8e1;
               }
 
               &.active {
-                background-color: #ff9900; // Bright honey for active language
+                background-color: #ff9900;
                 color: #fff8e1;
               }
             }
@@ -159,36 +162,37 @@
     }
 
     &.open {
-      transform: translateX(0); // Slide in when open
+      transform: translateX(0);
     }
   }
 
   @media (max-width: 768px) {
     .header-container {
-      flex-direction: row; // Keep logo and hamburger in a row
+      flex-direction: row;
       align-items: center;
       padding: 0 20px;
     }
-      .hamburger {
-      display: block; // Show hamburger on mobile
+
+    .hamburger {
+      display: block;
     }
 
     .navbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: #fff8e1; 
-      transform: translateX(-100%); 
+      background-color: #fff8e1;
+      transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
-      z-index: 5;
+      z-index: 999; // Slightly lower than hamburger
 
       ul {
         flex-direction: column;
         gap: 5vh;
         text-align: center;
-        padding: 20vh 20px; 
+        padding: 20vh 20px;
         margin: 0;
 
         li {
@@ -197,7 +201,7 @@
             color: #4a2c00;
 
             &.active {
-              border-bottom: none; // Remove underline in mobile menu
+              border-bottom: none;
               color: #ff9900;
             }
           }
@@ -210,7 +214,7 @@
             }
 
             .language-dropdown {
-              position: static; // Inside the mobile menu
+              position: static;
               background: none;
               box-shadow: none;
               max-height: 0;
@@ -225,7 +229,7 @@
               button {
                 font-size: 1.2rem;
                 padding: 10px;
-                border: 1px solid #4a2c00; // Dark honey border
+                border: 1px solid #4a2c00;
                 border-radius: 5px;
                 margin: 5px 0;
 
