@@ -15,7 +15,6 @@
     gap: 10px;
     margin-bottom: 20px;
     flex-wrap: wrap;
-    justify-content: flex-start;
 
     .search-input,
     .country-select {
@@ -24,66 +23,72 @@
       border-radius: 4px;
       flex: 1 1 200px;
       max-width: 300px;
-      min-width: 150px;
     }
   }
 
   .ip-table {
-    overflow-x: auto;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     min-height: 300px;
 
-    table {
+    /* Scroll wrapper */
+    .table-wrapper {
       width: 100%;
-      border-collapse: collapse;
-      font-size: 15px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* smooth on iOS */
 
-      th,
-      td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid #eee;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 200px;
-      }
+      table {
+        min-width: 600px; /* veya ihtiyacına göre */
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
 
-      th {
-        background: #f8f8f8;
-        font-weight: 600;
-        color: #333;
-      }
+        th,
+        td {
+          padding: 12px;
+          text-align: left;
+          border-bottom: 1px solid #eee;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 200px;
+        }
 
-      td {
-        color: #555;
-      }
+        th {
+          background: #f8f8f8;
+          font-weight: 600;
+          color: #333;
+        }
 
-      .no-data {
-        text-align: center;
-        color: #777;
-        font-style: italic;
-        padding: 20px;
-      }
+        td {
+          color: #555;
+        }
 
-      tr:hover {
-        background: #f5f5f5;
-      }
+        .no-data {
+          text-align: center;
+          color: #777;
+          font-style: italic;
+          padding: 20px;
+        }
 
-      .delete-button {
-        padding: 6px 12px;
-        border: none;
-        background: #ff4d4f;
-        color: #fff;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: background 0.2s;
+        tr:hover {
+          background: #f5f5f5;
+        }
 
-        &:hover {
-          background: #d9363e;
+        .delete-button {
+          padding: 6px 12px;
+          border: none;
+          background: #ff4d4f;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 4px;
+          transition: background 0.2s;
+
+          &:hover {
+            background: #d9363e;
+          }
         }
       }
     }
@@ -126,7 +131,6 @@
     }
   }
 
-  // Medium screens
   @media (max-width: 992px) {
     .filters {
       flex-direction: row;
@@ -143,22 +147,24 @@
       padding: 15px;
       min-height: 250px;
 
-      table {
-        font-size: 14px;
+      .table-wrapper {
+        table {
+          font-size: 14px;
 
-        th,
-        td {
-          padding: 10px;
-          max-width: 180px;
-        }
+          th,
+          td {
+            padding: 10px;
+            max-width: 180px;
+          }
 
-        .delete-button {
-          padding: 5px 10px;
-          font-size: 12px;
-        }
+          .delete-button {
+            padding: 5px 10px;
+            font-size: 12px;
+          }
 
-        .no-data {
-          padding: 15px;
+          .no-data {
+            padding: 15px;
+          }
         }
       }
     }
@@ -172,7 +178,6 @@
     }
   }
 
-  // Small screens
   @media (max-width: 768px) {
     .filters {
       flex-direction: column;
@@ -185,12 +190,14 @@
     }
 
     .ip-table {
-      table {
-        font-size: 13px;
+      .table-wrapper {
+        table {
+          font-size: 13px;
 
-        th,
-        td {
-          max-width: 150px;
+          th,
+          td {
+            max-width: 150px;
+          }
         }
       }
     }
@@ -205,23 +212,24 @@
     }
   }
 
-  // Extra small screens
   @media (max-width: 480px) {
     .ip-table {
       padding: 10px;
 
-      table {
-        font-size: 12px;
+      .table-wrapper {
+        table {
+          font-size: 12px;
 
-        th,
-        td {
-          padding: 6px;
-          max-width: 120px;
-        }
+          th,
+          td {
+            padding: 6px;
+            max-width: 120px;
+          }
 
-        .delete-button {
-          padding: 4px 6px;
-          font-size: 11px;
+          .delete-button {
+            padding: 4px 6px;
+            font-size: 11px;
+          }
         }
       }
     }
@@ -234,60 +242,6 @@
       button {
         font-size: 12px;
         padding: 6px 12px;
-      }
-    }
-  }
-
-  // Ultra wide screens
-  @media (min-width: 1400px) {
-    max-width: 1400px;
-
-    .filters {
-      .search-input,
-      .country-select {
-        max-width: 400px;
-      }
-    }
-
-    .ip-table {
-      table {
-        font-size: 16px;
-
-        th,
-        td {
-          max-width: 250px;
-        }
-      }
-    }
-  }
-
-  // Very narrow screens
-  @media (max-width: 360px) {
-    .filters {
-      gap: 5px;
-
-      .search-input,
-      .country-select {
-        font-size: 12px;
-        padding: 6px;
-      }
-    }
-
-    .ip-table {
-      table {
-        font-size: 11px;
-
-        th,
-        td {
-          max-width: 100px;
-        }
-      }
-    }
-
-    .pagination {
-      button {
-        font-size: 11px;
-        padding: 5px 10px;
       }
     }
   }
