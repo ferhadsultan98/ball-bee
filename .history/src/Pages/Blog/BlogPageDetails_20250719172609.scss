@@ -14,66 +14,39 @@
 
   .blogDetailsContainer {
     width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
   .blogDetailsPost {
+    background: #fff;
     border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 40px;
-
-    .blogDetailsPostHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 30px;
-      background: #ffffff9c;
-      border-bottom: 1px solid #eee;
-
-      h1 {
-        font-size: 2.5rem;
-        color: #4a2c00;
-        margin: 0;
-        line-height: 1.3;
-      }
-
-      .blogDetailsDateContainer {
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 12px;
-        padding: 5px 10px;
-        font-size: 0.9rem;
-        color: #4a2c00;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
-    }
-
-    .blogDetailsPostImage {
-      position: relative;
-      width: 100%;
-      height: 400px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.5s ease;
-      }
-    }
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 
     .blogDetailsPostContent {
-      padding: 30px;
       text-align: left;
 
       .blogDetailsPostMeta {
         margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        color: #8a5522;
+        font-size: 0.9rem;
+        font-style: italic;
 
-        .blogDetailsPostAuthor {
-          font-size: 0.9rem;
-          color: #8a5522;
-          font-style: italic;
+        .blogDetailsPostAuthor,
+        .blogDetailsPostDate {
+          margin: 0 10px;
         }
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #4a2c00;
+        margin-bottom: 20px;
+        line-height: 1.3;
       }
 
       p {
@@ -123,21 +96,11 @@
 
   @media (max-width: 1024px) {
     .blogDetailsPost {
-      .blogDetailsPostHeader {
+      .blogDetailsPostContent {
         h1 {
           font-size: 2rem;
         }
 
-        .blogDetailsDateContainer {
-          font-size: 0.85rem;
-        }
-      }
-
-      .blogDetailsPostImage {
-        height: 350px;
-      }
-
-      .blogDetailsPostContent {
         p {
           font-size: 1rem;
         }
@@ -159,33 +122,21 @@
     }
 
     .blogDetailsPost {
-      .blogDetailsPostHeader {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 20px;
+      padding: 20px;
+
+      .blogDetailsPostContent {
+        .blogDetailsPostMeta {
+          flex-direction: column;
+          text-align: center;
+
+          .blogDetailsPostAuthor,
+          .blogDetailsPostDate {
+            margin: 5px 0;
+          }
+        }
 
         h1 {
           font-size: 1.8rem;
-          margin-bottom: 10px;
-        }
-
-        .blogDetailsDateContainer {
-          font-size: 0.8rem;
-          padding: 4px 8px;
-        }
-      }
-
-      .blogDetailsPostImage {
-        height: 250px;
-      }
-
-      .blogDetailsPostContent {
-        padding: 20px;
-
-        .blogDetailsPostMeta {
-          .blogDetailsPostAuthor {
-            font-size: 0.8rem;
-          }
         }
 
         p {

@@ -101,7 +101,7 @@
     "details": {
       "title": "Blog Details",
       "desc": "Full details and insights about the post.",
-      "backtoBlog": "Back to Blog"
+      "backBlog": "Back to Blog"
     }
 
     

@@ -11,7 +11,7 @@ const BlogPageDetails = () => {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const postRef = ref(db, `blogPosts/${postId}`);
@@ -37,35 +37,33 @@ const BlogPageDetails = () => {
 
   return (
     <div className="blogDetailsPage">
-      <HeroSection titleKey="blog.details.title" descriptionKey="blog.details.desc" />
+       <HeroSection titleKey="blog.details.title" descriptionKey="blog.details.desc" />
       <div className="blogDetailsSection">
         <div className="blogDetailsContainer">
           {loading ? (
-            <BeeLoader />
+           <BeeLoader/>
           ) : error ? (
             <div className="blogDetailsNoPosts">{error}</div>
           ) : !post ? (
             <div className="blogDetailsNoPosts">Post not found</div>
           ) : (
             <div className="blogDetailsPost">
-              <div className="blogDetailsPostHeader">
-                <h1>{post.title[i18n.language]}</h1>
+              <div className="blogDetailsPostImage">
+                <img src={post.image} alt={post.title[i18n.language]} />
                 <div className="blogDetailsDateContainer">
                   <span className="blogDetailsPostDate">{post.date}</span>
                 </div>
-              </div>
-              <div className="blogDetailsPostImage">
-                <img src={post.image} alt={post.title[i18n.language]} />
               </div>
               <div className="blogDetailsPostContent">
                 <div className="blogDetailsPostMeta">
                   <span className="blogDetailsPostAuthor">By {post.author}</span>
                 </div>
+                <h1>{post.title[i18n.language]}</h1>
                 <div dangerouslySetInnerHTML={{ __html: post.content[i18n.language] }} />
                 <div className="blogDetailsPostHashtags">{post.hashtags}</div>
                 <div className="blogDetailsPostActions">
                   <Link to="/blog" className="blogDetailsBackButton">
-                    {t("blog.details.backtoBlog")}
+                    
                   </Link>
                 </div>
               </div>

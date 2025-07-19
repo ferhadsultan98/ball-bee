@@ -23,31 +23,6 @@
     overflow: hidden;
     margin-bottom: 40px;
 
-    .blogDetailsPostHeader {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 30px;
-      background: #ffffff9c;
-      border-bottom: 1px solid #eee;
-
-      h1 {
-        font-size: 2.5rem;
-        color: #4a2c00;
-        margin: 0;
-        line-height: 1.3;
-      }
-
-      .blogDetailsDateContainer {
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 12px;
-        padding: 5px 10px;
-        font-size: 0.9rem;
-        color: #4a2c00;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      }
-    }
-
     .blogDetailsPostImage {
       position: relative;
       width: 100%;
@@ -59,6 +34,18 @@
         object-fit: cover;
         display: block;
         transition: transform 0.5s ease;
+      }
+
+      .blogDetailsDateContainer {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        color: #4a2c00;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       }
     }
 
@@ -74,6 +61,13 @@
           color: #8a5522;
           font-style: italic;
         }
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #4a2c00;
+        margin-bottom: 20px;
+        line-height: 1.3;
       }
 
       p {
@@ -123,21 +117,15 @@
 
   @media (max-width: 1024px) {
     .blogDetailsPost {
-      .blogDetailsPostHeader {
-        h1 {
-          font-size: 2rem;
-        }
-
-        .blogDetailsDateContainer {
-          font-size: 0.85rem;
-        }
-      }
-
       .blogDetailsPostImage {
         height: 350px;
       }
 
       .blogDetailsPostContent {
+        h1 {
+          font-size: 2rem;
+        }
+
         p {
           font-size: 1rem;
         }
@@ -159,24 +147,13 @@
     }
 
     .blogDetailsPost {
-      .blogDetailsPostHeader {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 20px;
-
-        h1 {
-          font-size: 1.8rem;
-          margin-bottom: 10px;
-        }
+      .blogDetailsPostImage {
+        height: 250px;
 
         .blogDetailsDateContainer {
           font-size: 0.8rem;
           padding: 4px 8px;
         }
-      }
-
-      .blogDetailsPostImage {
-        height: 250px;
       }
 
       .blogDetailsPostContent {
@@ -186,6 +163,10 @@
           .blogDetailsPostAuthor {
             font-size: 0.8rem;
           }
+        }
+
+        h1 {
+          font-size: 1.8rem;
         }
 
         p {
