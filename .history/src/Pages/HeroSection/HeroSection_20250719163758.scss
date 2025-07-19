@@ -1,0 +1,113 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  z-index: 9;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff8e1;
+    z-index: 8;
+    max-width: 80%; /* Metin taşmasını sınırlamak için */
+
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      white-space: nowrap; /* Tek satırda tut */
+      overflow: hidden; /* Taşan metni gizle */
+      text-overflow: ellipsis; /* ... ekle */
+    }
+
+    p {
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+      overflow: hidden; /* Taşan metni gizle */
+      text-overflow: ellipsis; /* ... ekle */
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* Maksimum 2 satır */
+      -webkit-box-orient: vertical; /* Dikey kutu modeli */
+    }
+  }
+
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left: 15px;
+    top: 25px;
+
+    &:hover {
+      background-color: #ffb300;
+    }
+  }
+
+  /* Responsive Tasarım için Medya Sorguları */
+  @media (max-width: 768px) {
+    /* Tablet ve daha küçük ekranlar */
+    height: 400px; /* Bölme yüksekliğini küçült */
+
+    .hero-overlay {
+      max-width: 90%; /* Daha küçük ekranlarda daha fazla alan */
+
+      h1 {
+        font-size: 2.5rem; /* Başlık yazı tipini küçült */
+      }
+
+      p {
+        font-size: 1.2rem; /* Açıklama yazı tipini küçült */
+        -webkit-line-clamp: 3; /* Daha fazla satır göster */
+      }
+    }
+
+    .back-btn {
+      padding: 8px 16px; /* Buton boyutunu küçült */
+      font-size: 1rem; /* Buton yazı tipini küçült */
+      left: 10px;
+      top: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Mobil cihazlar */
+    height: 300px; /* Bölme yüksekliğini daha da küçült */
+
+    .hero-overlay {
+      max-width: 95%; /* Maksimum alan kullanımı */
+
+      h1 {
+        font-size: 1.8rem; /* Başlık yazı tipini daha da küçült */
+      }
+
+      p {
+        font-size: 1rem; /* Açıklama yazı tipini daha da küçült */
+      }
+    }
+
+    .back-btn {
+      padding: 6px 12px; /* Buton boyutunu daha da küçült */
+      font-size: 0.9rem; /* Buton yazı tipini daha da küçült */
+      left: 8px;
+      top: 15px;
+    }
+  }
+}

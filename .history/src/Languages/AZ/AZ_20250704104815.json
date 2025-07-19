@@ -1,0 +1,106 @@
+{
+  "header": {
+    "about": "Haqqımızda",
+    "gallery": "Qalereya",
+    "products": "Məhsullar",
+    "contact": "Əlaqə"
+  },
+  "home": {
+    "learnmore": "Daha çox öyrən",
+    "healthbenefitshead": "Balın sağlamlığa faydaları",
+    "healthbenefitsdesc": "Bal, yüksək vitamin və mineral tərkibi ilə immun sistemini gücləndirir və eyni zamanda zədələnmiş toxumaların bərpasına kömək edir.",
+    "honeyhistoryhead": "Balın Tarixi",
+    "honeyhistorydesc": "Balın istifadəsi qədim dövrlərə, hətta Misir mədəniyyətinə qədər gedib çıxır. Arxeoloqlar balın 3,000 ildən çoxdur istifadə edildiyini aşkar ediblər.",
+    "naturehoneyhead": "Balın Hazırlanması",
+    "naturehoneydesc": "Bal, arıların çiçəklərdən topladıqları nektardan təbii olaraq istehsal olunur. Bu prosesdə heç bir kimyəvi maddə və ya əlavələrdən istifadə edilmir.",
+    "honeyfoodhead": "Bal Qida Formasında",
+    "honeyfooddesc": "Bal qədim dövrlərdən həm qida, həm də dərman kimi istifadə olunub. O, sürətli enerji qaynağı və təbii antibiotik kimi tanınır.",
+    "customerReviews": "Müştəri rəyləri"
+  },
+  "details": {
+    "exploreTopics": "Bal Haqqında",
+    "backToHome": "Ana Səhifəyə Qayıt",
+    "viewProducts": "Məhsullara Bax",
+    "healthbenefits": {
+      "point1": "Bal immunitet sistemini gücləndirir və soyuqdəymə ilə mübarizə aparır.",
+      "point2": "Təbii antioksidantlarla zəngindir, bu da hüceyrələri zərərdən qoruyur.",
+      "point3": "Yaraların sağalmasını sürətləndirir və antibakterial xüsusiyyətlərə malikdir.",
+      "point4": "Enerji səviyyəsini artırır və yorğunluğu aradan qaldırır."
+    },
+    "honeyhistory": {
+      "point1": "Balın istifadəsi qədim dövrlərə, hətta Misir mədəniyyətinə qədər gedib çıxır.",
+      "point2": "Arxeoloqlar balın 3,000 ildən çoxdur istifadə edildiyini aşkar ediblər.",
+      "point3": "Qədim Misirdə bal, mumiyalama prosesində də istifadə olunurdu.",
+      "point4": "Yunan mifologiyasında bal, tanrıların qidası olaraq qəbul edilirdi."
+    },
+    "naturehoney": {
+      "point1": "Bal, arıların çiçəklərdən topladıqları nektardan təbii olaraq istehsal olunur.",
+      "point2": "Arılar nektarı mədələrində fermentləşdirərək bal halına gətirirlər.",
+      "point3": "Bu prosesdə heç bir kimyəvi maddə və ya əlavələrdən istifadə edilmir.",
+      "point4": "Balın təbii qoruyucu xüsusiyyətləri sayəsində uzun müddət xarab olmur."
+    },
+    "honeyfood": {
+      "point1": "Bal qədim dövrlərdən həm qida, həm də dərman kimi istifadə olunub.",
+      "point2": "O, sürətli enerji qaynağı kimi tanınır və təbii şəkərlər ehtiva edir.",
+      "point3": "Bal təbii antibiotik xüsusiyyətlərinə malikdir və infeksiyalara qarşı mübarizə aparır.",
+      "point4": "Müasir dövrdə bal, desertlərdə və içkilərdə təbii tatlandırıcı kimi istifadə edilir."
+    }
+  },
+  "about": {
+    "herodesc": "Təbiətin ən saf və ən şəfa verici bəxşişini kəşf edin!",
+    "titlehead": "Təbii Balın Ünvanı",
+    "titledesc": "BalBee olaraq, sizə təbiətin ən saf və ən şəfa verici bəxşişini təqdim edirik. Ən yaxşı arıçılar tərəfindən toplanan balımız, tamamilə təbii olaraq, heç bir əlavə maddə olmadan istehsal edilir. Missiyamız sağlam həyat tərzini dəstəkləmək və bu təbiət möcüzəsini hər kəsə təqdim etməkdir.",
+    "subtitlehead": "Balın Faydaları",
+    "benefitonehead": "Enerji Mənbəyi:",
+    "benefitonedesc": "Təbii şəkərlər sayəsində bütün gün boyunca enerji verir.",
+    "benefittwohead": "İmmuniteti Gücləndirir:",
+    "benefittwodesc": "Antioksidantlarla zəngin, xəstəliklərdən qoruyur.",
+    "benefitthreehead": "Yaraların Şəfa Tapması:",
+    "benefitthreedesc": "Antibakterial xüsusiyyətləri ilə yaraların şəfa tapmasını sürətləndirir.",
+    "benefitfourhead": "Həzm Sisteminə Yaxşı Təsir Edir:",
+    "benefitfourdesc": "Bağırsaq sistemini dəstəkləyir.",
+    "benefitfivehead": "Dəri Sağlamlığı:",
+    "benefitfivedesc": "Təbii nəmləndirici kimi dəri sağlamlığını dəstəkləyir."
+  },
+  "product": {
+    "herodesc": "Təbiətin ən şirin hədiyyələrini kəşf edin!",
+    "order": "Sifariş ver",
+    "details": "Ətraflı bax",
+    "back": "Geri"
+  },
+  "productDetails": {
+   "header": "Məhsul haqqında",
+   "detailsDesc": "Məhsulun əsas xüsusiyyətləri"
+  },
+  
+  "gallery": {
+    "desc": "Təbiətin ən şirin hədiyyəsini kəşf edin!",
+    "choosehoney": "Seçilmiş Bal Növlərimiz",
+    "honeyproduct": "Bal İstehsal Prosesimiz",
+    "likes": "Bəyəni"
+  },
+  "contact": {
+    "herodesc": "Təbiətin şirinliyini bizimlə paylaşın!",
+    "brandtagline": "Təbii Balın Ünvanı",
+    "infos": "Əlaqə Məlumatları",
+    "address": "Ünvan",
+    "location": "Ağstafa rayonu, Qarayazı meşəsi",
+    "viewmap": "Xəritədə Görün",
+    "businesshours": "İş Saatları",
+    "businessday": "Bazar ertəsi - Şənbə: 09:00 - 18:00",
+    "web": "Vebsayt",
+    "followus": "Bizi İzləyin"
+  },
+  "footer": {
+    "desc": "Saf Təbii Bal",
+    "quicklinks": "Tez Bağlantılar",
+    "phone": "Telefon",
+    "email": "E-poçt",
+    "bottom": "Bütün hüquqlar qorunur"
+  },
+  "common": {
+    "backtohome": "Ana səhifə",
+    "noproduct": "Məhsul yoxdur",
+    "createdby": "Fərhad SULTANOV tərəfindən hazırlanmışdır"
+  }
+}
