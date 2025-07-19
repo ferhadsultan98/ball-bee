@@ -1,0 +1,467 @@
+// HoneyTestimonials.scss
+
+// Bal rəng palitrası
+$honey-primary: #d4a574;
+$honey-secondary: #f4a460;
+$honey-dark: #b8860b;
+$honey-light: #ffd700;
+$honey-amber: #ffbf00;
+$honey-brown: #8b6914;
+$honey-cream: #fffaf0;
+$text-dark: #3d2914;
+$text-light: #5d4e37;
+
+// Mixins
+@mixin honeyGradient {
+  background: linear-gradient(135deg, $honey-primary 0%, $honey-secondary 50%, $honey-dark 100%);
+}
+
+@mixin honeyGlow {
+  box-shadow: 0 0 30px rgba($honey-light, 0.3),
+              0 0 60px rgba($honey-amber, 0.1);
+}
+
+@mixin hexagonClip {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+// Ana testimonials bölməsi
+.honeyTestimonials {
+  padding: 100px 0;
+  background: linear-gradient(180deg, $honey-cream 0%, rgba($honey-light, 0.1) 50%, $honey-cream 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba($honey-amber, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba($honey-secondary, 0.1) 0%, transparent 50%);
+    animation: floatBackground 20s ease-in-out infinite;
+  }
+
+  .honeyContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .honeyHeader {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+
+    .honeycombPattern {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      opacity: 0.1;
+      
+      &::before {
+        content: '⬡';
+        font-size: 100px;
+        color: $honey-dark;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+   
+    .sectionSubtitle {
+      font-size: 1.3rem;
+      color: $text-light;
+      font-weight: 400;
+      margin-top: 30px;
+    }
+  }
+
+  .testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .testimonialCard {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      @include honeyGradient;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      @include honeyGlow;
+
+      .honeyDrip {
+        top: 5px;
+      }
+
+      .authorImage {
+        transform: scale(1.05);
+      }
+
+      .hexagonDecor {
+        transform: rotate(30deg) scale(1.1);
+      }
+    }
+
+    &.card1 {
+      .honeyDrip {
+        background: linear-gradient(180deg, $honey-primary 0%, transparent 100%);
+      }
+    }
+
+    &.card2 {
+      .honeyDrip {
+        background: linear-gradient(180deg, $honey-secondary 0%, transparent 100%);
+      }
+    }
+
+    &.card3 {
+      .honeyDrip {
+        background: linear-gradient(180deg, $honey-amber 0%, transparent 100%);
+      }
+    }
+
+    .honeyDrip {
+      position: absolute;
+      top: -20px;
+      right: 30px;
+      width: 30px;
+      height: 40px;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      transition: all 0.5s ease;
+      opacity: 0.8;
+    }
+
+    .quoteIcon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+        color: $honey-primary;
+        opacity: 0.3;
+      }
+    }
+
+    .testimonialContent {
+      margin-bottom: 30px;
+
+      .testimonialQuote {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: $text-light;
+        font-style: italic;
+        position: relative;
+      }
+    }
+
+    .testimonialAuthor {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .authorImage {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        transition: transform 0.3s ease;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid $honey-light;
+        }
+
+        .honeyGlow {
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          background: radial-gradient(circle, rgba($honey-amber, 0.3) 0%, transparent 70%);
+          border-radius: 50%;
+          z-index: -1;
+          animation: pulse 2s ease-in-out infinite;
+        }
+      }
+
+      .authorInfo {
+        flex: 1;
+
+        .authorName {
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: $text-dark;
+          margin-bottom: 5px;
+        }
+
+        .authorTitle {
+          font-size: 1rem;
+          color: $honey-dark;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .hexagonDecor {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      opacity: 0.05;
+      transition: all 0.5s ease;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+        color: $honey-dark;
+      }
+    }
+  }
+
+  .beeDecoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    
+    .bee {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.6;
+      
+      &.bee1 {
+        top: 20%;
+        left: 5%;
+        animation: beeFly1 15s linear infinite;
+      }
+      
+      &.bee2 {
+        top: 60%;
+        right: 10%;
+        animation: beeFly2 20s linear infinite;
+      }
+      
+      &.bee3 {
+        bottom: 30%;
+        left: 10%;
+        animation: beeFly3 18s linear infinite;
+      }
+    }
+  }
+}
+
+// Animasiyalar
+@keyframes floatBackground {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes beeFly1 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(200px) translateY(-50px);
+  }
+  50% {
+    transform: translateX(400px) translateY(50px);
+  }
+  75% {
+    transform: translateX(200px) translateY(100px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes beeFly2 {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-300px) translateY(-100px) rotate(180deg);
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes beeFly3 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  33% {
+    transform: translateX(150px) translateY(-80px);
+  }
+  66% {
+    transform: translateX(300px) translateY(30px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+// Responsive dizayn
+@media (max-width: 1024px) {
+  .honeyTestimonials {
+    .testimonialsGrid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .honeyTestimonials {
+    padding: 60px 0;
+
+    .honeyHeader {
+      margin-bottom: 50px;
+      
+   
+
+      .sectionSubtitle {
+        font-size: 1.1rem;
+        padding: 0 20px;
+      }
+    }
+
+    .testimonialsGrid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    .testimonialCard {
+      padding: 30px 25px;
+
+      .testimonialContent {
+        .testimonialQuote {
+          font-size: 1.1rem;
+        }
+      }
+
+      .testimonialAuthor {
+        .authorImage {
+          width: 60px;
+          height: 60px;
+        }
+
+        .authorInfo {
+          .authorName {
+            font-size: 1.2rem;
+          }
+
+          .authorTitle {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    .beeDecoration {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .honeyTestimonials {
+    .honeyHeader {
+    
+      .sectionSubtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .testimonialCard {
+      padding: 25px 20px;
+
+      .quoteIcon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .testimonialContent {
+        .testimonialQuote {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+      }
+
+      .testimonialAuthor {
+        flex-direction: column;
+        text-align: center;
+
+        .authorInfo {
+          .authorName {
+            font-size: 1.1rem;
+          }
+
+          .authorTitle {
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .hexagonDecor {
+        width: 70px;
+        height: 70px;
+        bottom: -20px;
+        right: -20px;
+      }
+    }
+  }
+}

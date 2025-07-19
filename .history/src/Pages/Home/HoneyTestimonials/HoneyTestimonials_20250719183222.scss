@@ -1,0 +1,115 @@
+.quotes-section {
+  padding: 50px 0;
+  background-image: url("/path/to/honey-bee-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #af6b05a7;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .quote-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .quote-card {
+      width: 250px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        object-fit: cover;
+      }
+
+      .quote-content {
+        .quote-text {
+          font-size: 1.1rem;
+          color: #555;
+          margin-bottom: 10px;
+          font-style: italic;
+        }
+
+        .author-name {
+          font-weight: bold;
+          color: #333;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 15px;
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+    }
+
+    .quote-cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .quote-card {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+
+        .avatar {
+          width: 60px;
+          height: 60px;
+        }
+
+        .quote-content {
+          .quote-text {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+          }
+
+          .author-name {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 10px;
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2rem);
+    }
+
+    .quote-cards {
+      padding: 0 10px;
+    }
+  }
+}

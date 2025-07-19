@@ -1,0 +1,599 @@
+// HoneyTestimonials.scss
+
+// Animasiyalar
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes flap {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(70deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+@keyframes drip {
+  0% { 
+    transform: translateY(-100%) scale(1); 
+    opacity: 0; 
+  }
+  10% { opacity: 1; }
+  90% { 
+    opacity: 1; 
+    transform: translateY(500%) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(500%) scale(0.5); 
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+// Ana testimonials bölməsi
+.honeyTestimonials {
+  position: relative;
+  width: 100%;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  background: linear-gradient(to bottom, rgba(255, 186, 51, 0.3), #ffbb33);
+  box-shadow: 0 8px 30px rgba(255, 186, 51, 0.3);
+  
+  &.visible {
+    opacity: 1;
+    
+    .sectionTitle, 
+    .sectionSubtitle, 
+    .testimonialCard,
+    .honeyButton {
+      animation: fadeIn 0.8s forwards;
+    }
+    
+    .sectionTitle {
+      animation-delay: 0.3s;
+    }
+    
+    .sectionSubtitle {
+      animation-delay: 0.5s;
+    }
+    
+    .testimonialCard {
+      &:nth-child(1) { animation-delay: 0.6s; }
+      &:nth-child(2) { animation-delay: 0.8s; }
+      &:nth-child(3) { animation-delay: 1s; }
+    }
+    
+    .honeyButton {
+      animation-delay: 1.2s;
+    }
+    
+    .beeIcon {
+      animation: float 3s infinite ease-in-out;
+    }
+    
+    .beeWing {
+      animation: flap 0.2s infinite ease-in-out;
+    }
+  }
+  
+  .honeyBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .honeycomb {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0.4;
+    transform: rotate(30deg);
+    
+    .cell {
+      width: 60px;
+      height: 104px;
+      margin: 2px;
+      background-color: rgba(255, 255, 255, 0.2);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      transition: all 0.3s ease;
+      
+      &:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+      
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: scale(1.1);
+      }
+      
+      @media (max-width: 768px) {
+        width: 40px;
+        height: 69px;
+      }
+      
+      @media (max-width: 480px) {
+        width: 30px;
+        height: 52px;
+      }
+    }
+  }
+  
+  .honeyDrop {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background-color: rgba(255, 190, 0, 0.8);
+    border-radius: 0 100% 100% 100%;
+    transform: rotate(45deg);
+    opacity: 0;
+    
+    &:nth-child(1) {
+      top: 10%;
+      left: 15%;
+    }
+    
+    &:nth-child(2) {
+      top: 5%;
+      left: 40%;
+      width: 15px;
+      height: 22px;
+    }
+    
+    &:nth-child(3) {
+      top: 12%;
+      left: 65%;
+      width: 25px;
+      height: 35px;
+    }
+    
+    &:nth-child(4) {
+      top: 8%;
+      left: 85%;
+    }
+    
+    &:nth-child(5) {
+      top: 15%;
+      left: 25%;
+      width: 18px;
+      height: 24px;
+    }
+    
+    &:nth-child(6) {
+      top: 3%;
+      left: 70%;
+      width: 12px;
+      height: 18px;
+    }
+    
+    &.dripping {
+      animation: drip 4s infinite;
+      
+      &:nth-child(1) { animation-delay: 0.5s; }
+      &:nth-child(2) { animation-delay: 1.2s; }
+      &:nth-child(3) { animation-delay: 0.8s; }
+      &:nth-child(4) { animation-delay: 1.5s; }
+      &:nth-child(5) { animation-delay: 0.3s; }
+      &:nth-child(6) { animation-delay: 1.7s; }
+    }
+  }
+
+  .honeyContainer {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 1rem;
+    }
+  }
+
+  .honeyHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+
+    .beeIcon {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      margin: 0 auto 2rem;
+      
+      .beeBody {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #FFD700 0%, #FFC400 50%, #FFD700 100%);
+        border-radius: 50px;
+        overflow: hidden;
+        
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 33%;
+          background-color: #000;
+          opacity: 0.7;
+        }
+        
+        &:before {
+          left: 33%;
+        }
+        
+        &:after {
+          right: 0;
+        }
+      }
+      
+      .beeWing {
+        position: absolute;
+        width: 30px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        top: -5px;
+        
+        &.wingLeft {
+          left: 15px;
+          transform-origin: bottom left;
+        }
+        
+        &.wingRight {
+          right: 15px;
+          transform-origin: bottom right;
+        }
+      }
+      
+      .beeStinger {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        right: -5px;
+        top: 10px;
+        clip-path: polygon(0 0, 0 100%, 100% 50%);
+      }
+    }
+
+    .sectionTitle {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #5a3800;
+      margin-bottom: 1rem;
+      opacity: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 2rem;
+      }
+    }
+
+    .sectionSubtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #5a3800;
+      margin-bottom: 2rem;
+      opacity: 0;
+      
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+
+  .testimonialCard {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    opacity: 0;
+    box-shadow: 0 5px 20px rgba(90, 56, 0, 0.1);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #FFD700 0%, #FFC400 50%, #FFD700 100%);
+      transition: height 0.3s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: skewX(-25deg);
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(90, 56, 0, 0.2);
+      
+      &::before {
+        height: 100%;
+        opacity: 0.1;
+      }
+
+      &::after {
+        transform: translateX(350%) skewX(-25deg);
+        opacity: 1;
+      }
+
+      .cardHoneyDrip {
+        top: 5px;
+        opacity: 1;
+      }
+
+      .authorImage {
+        transform: scale(1.1);
+        
+        img {
+          border-color: #FFD700;
+        }
+      }
+
+      .hexagonDecor {
+        transform: rotate(30deg) scale(1.1);
+        opacity: 0.1;
+      }
+    }
+
+    .cardHoneyDrip {
+      position: absolute;
+      top: -20px;
+      right: 30px;
+      width: 30px;
+      height: 40px;
+      background: linear-gradient(180deg, rgba(255, 190, 0, 0.8) 0%, transparent 100%);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+
+    .quoteIcon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+        color: #ffbb33;
+        opacity: 0.3;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .testimonialContent {
+      margin-bottom: 30px;
+
+      .testimonialQuote {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #5a3800;
+        font-style: italic;
+        position: relative;
+        
+        @media (max-width: 768px) {
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .testimonialAuthor {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .authorImage {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        transition: transform 0.3s ease;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid #ffbb33;
+          transition: all 0.3s ease;
+        }
+
+        .honeyGlow {
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          right: -5px;
+          bottom: -5px;
+          background: radial-gradient(circle, rgba(255, 190, 0, 0.3) 0%, transparent 70%);
+          border-radius: 50%;
+          z-index: -1;
+          animation: pulse 2s ease-in-out infinite;
+        }
+      }
+
+      .authorInfo {
+        flex: 1;
+
+        .authorName {
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: #5a3800;
+          margin-bottom: 5px;
+        }
+
+        .authorTitle {
+          font-size: 1rem;
+          color: #7a5000;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .hexagonDecor {
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      opacity: 0.05;
+      transition: all 0.5s ease;
+      
+      svg {
+        width: 100%;
+        height: 100%;
+        color: #ffbb33;
+      }
+    }
+  }
+
+  .honeyButton {
+    background-color: #5a3800;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    max-width: fit-content;
+    
+    &:hover {
+      background-color: #7a5000;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(90, 56, 0, 0.3);
+      
+      .buttonText {
+        transform: translateX(-5px);
+      }
+      
+      .buttonIcon {
+        transform: translateX(5px);
+      }
+      
+      &:before {
+        transform: translateX(100%);
+      }
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+    }
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: skewX(-25deg);
+      transition: all 0.5s ease;
+    }
+    
+    .buttonText, 
+    .buttonIcon {
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    
+    .buttonIcon {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+    }
+    
+    @media (max-width: 480px) {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      
+      .buttonIcon {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
