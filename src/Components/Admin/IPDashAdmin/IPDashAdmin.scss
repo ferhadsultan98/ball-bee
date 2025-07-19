@@ -15,6 +15,7 @@
     gap: 10px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    justify-content: flex-start;
 
     .search-input,
     .country-select {
@@ -23,6 +24,7 @@
       border-radius: 4px;
       flex: 1 1 200px;
       max-width: 300px;
+      min-width: 150px;
     }
   }
 
@@ -124,6 +126,7 @@
     }
   }
 
+  // Medium screens
   @media (max-width: 992px) {
     .filters {
       flex-direction: row;
@@ -169,6 +172,7 @@
     }
   }
 
+  // Small screens
   @media (max-width: 768px) {
     .filters {
       flex-direction: column;
@@ -201,6 +205,7 @@
     }
   }
 
+  // Extra small screens
   @media (max-width: 480px) {
     .ip-table {
       padding: 10px;
@@ -229,6 +234,60 @@
       button {
         font-size: 12px;
         padding: 6px 12px;
+      }
+    }
+  }
+
+  // Ultra wide screens
+  @media (min-width: 1400px) {
+    max-width: 1400px;
+
+    .filters {
+      .search-input,
+      .country-select {
+        max-width: 400px;
+      }
+    }
+
+    .ip-table {
+      table {
+        font-size: 16px;
+
+        th,
+        td {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+
+  // Very narrow screens
+  @media (max-width: 360px) {
+    .filters {
+      gap: 5px;
+
+      .search-input,
+      .country-select {
+        font-size: 12px;
+        padding: 6px;
+      }
+    }
+
+    .ip-table {
+      table {
+        font-size: 11px;
+
+        th,
+        td {
+          max-width: 100px;
+        }
+      }
+    }
+
+    .pagination {
+      button {
+        font-size: 11px;
+        padding: 5px 10px;
       }
     }
   }
