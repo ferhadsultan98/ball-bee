@@ -68,7 +68,7 @@ This allows the platform to be easily updated without touching the code.
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/balbee.git
+git clone https://github.com/ferhadsultan98/ball-bee.git
 cd balbee
 
 # Install dependencies
