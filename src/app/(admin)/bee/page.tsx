@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "motion/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BlogAdmin } from "@/components/admin/BlogAdmin";
@@ -7,14 +9,15 @@ import { GalleryAdmin } from "@/components/admin/GalleryAdmin";
 import { IPDashAdmin } from "@/components/admin/IPDashAdmin";
 import { ProductsAdmin } from "@/components/admin/ProductsAdmin";
 import { AUTH_KEY } from "@/components/admin/ui";
-import { LogoMark } from "@/components/ui/Logo";
+import { ArrowUpRight } from "@/components/ui/Icons";
+import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 
 const SECTIONS = [
-  { key: "products", label: "Məhsullar" },
-  { key: "gallery", label: "Qalereya" },
-  { key: "blog", label: "Bloq" },
-  { key: "ip", label: "IP Dashboard" },
+  { key: "products", label: "Məhsullar", title: "Məhsullar", lead: "Məhsul əlavə edin, qiymət və təsvirləri yeniləyin." },
+  { key: "gallery", label: "Qalereya", title: "Qalereya", lead: "Saytdakı qalereya şəkillərini idarə edin." },
+  { key: "blog", label: "Bloq", title: "Bloq yazıları", lead: "Üç dildə yazı dərc edin və redaktə edin." },
+  { key: "ip", label: "Ziyarətçilər", title: "Ziyarətçilər", lead: "Sayta daxil olanların siyahısı." },
 ] as const;
 type SectionKey = (typeof SECTIONS)[number]["key"];
 
@@ -30,46 +33,89 @@ export default function AdminPage() {
   }, [router]);
 
   if (!ready) return null;
+  const current = SECTIONS.find((s) => s.key === section)!;
 
   return (
-    <div className="mx-auto flex min-h-dvh max-w-[1400px] flex-col gap-4 p-3 md:flex-row md:p-5">
-      <aside className="glass flex shrink-0 flex-col gap-6 rounded-[1.75rem] p-5 md:sticky md:top-5 md:h-[calc(100dvh-2.5rem)] md:w-64">
-        <div className="flex items-center gap-3">
-          <LogoMark size={44} />
-          <span className="font-semibold tracking-[-0.02em] text-ink">BalBee Admin</span>
-        </div>
-        <nav className="flex gap-1 overflow-x-auto md:flex-col">
-          {SECTIONS.map((s) => (
+    <div className="min-h-dvh">
+      <div aria-hidden className="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[34rem] bg-[radial-gradient(55%_60%_at_80%_0%,rgb(249_207_95/0.35),transparent_70%)]" />
+
+      <header className="sticky top-0 z-40 px-3 pt-3 md:px-5 md:pt-4">
+        <div className="glass mx-auto flex min-h-[3.75rem] max-w-[1320px] items-center justify-between gap-3 rounded-full bg-white/85! py-1.5 pl-1.5 pr-2">
+          <div className="flex items-center gap-3">
+            <Logo size={48} />
+            <span className="hidden text-sm font-semibold tracking-[-0.01em] text-ink sm:inline">Admin</span>
+          </div>
+
+          <nav aria-label="Bölmələr" className="no-scrollbar overflow-x-auto">
+            <ul className="flex items-center gap-1">
+              {SECTIONS.map((s) => {
+                const active = s.key === section;
+                return (
+                  <li key={s.key} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setSection(s.key)}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "relative z-10 whitespace-nowrap rounded-full px-3 py-2 text-[0.9rem] font-medium transition-colors md:px-4",
+                        active ? "text-ink" : "text-ink-soft/80 hover:text-ink",
+                      )}
+                    >
+                      {s.label}
+                    </button>
+                    {active ? (
+                      <motion.span
+                        layoutId="admin-active"
+                        className="absolute inset-0 rounded-full bg-white shadow-soft"
+                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      />
+                    ) : null}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <div className="flex items-center gap-2">
+            <Link href="/az" target="_blank" className="btn btn-ghost btn-sm hidden md:inline-flex">
+              Sayt
+              <ArrowUpRight size={15} />
+            </Link>
             <button
-              key={s.key}
               type="button"
-              onClick={() => setSection(s.key)}
-              aria-current={section === s.key ? "page" : undefined}
-              className={cn(
-                "whitespace-nowrap rounded-2xl px-4 py-3 text-left text-sm font-medium transition",
-                section === s.key ? "bg-ink text-cream-50" : "text-ink-soft hover:bg-white/70",
-              )}
+              onClick={() => {
+                localStorage.removeItem(AUTH_KEY);
+                router.push("/login");
+              }}
+              className="btn btn-ink btn-sm"
             >
-              {s.label}
+              Çıxış
             </button>
-          ))}
-        </nav>
-        <button
-          type="button"
-          onClick={() => {
-            localStorage.removeItem(AUTH_KEY);
-            router.push("/login");
-          }}
-          className="btn btn-ghost btn-sm mt-auto"
+          </div>
+        </div>
+      </header>
+
+      <main className="container-x pb-20 pt-12 md:pt-16">
+        <motion.div
+          key={section}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          Çıxış
-        </button>
-      </aside>
-      <main className="min-w-0 flex-1">
-        {section === "products" && <ProductsAdmin />}
-        {section === "gallery" && <GalleryAdmin />}
-        {section === "blog" && <BlogAdmin />}
-        {section === "ip" && <IPDashAdmin />}
+          <p className="eyebrow">
+            <span className="h-px w-6 bg-current opacity-50" aria-hidden />
+            İdarəetmə paneli
+          </p>
+          <h1 className="text-h2 mt-4 text-ink">{current.title}</h1>
+          <p className="text-lead mt-3 max-w-xl text-muted">{current.lead}</p>
+
+          <div className="mt-10 md:mt-12">
+            {section === "products" && <ProductsAdmin />}
+            {section === "gallery" && <GalleryAdmin />}
+            {section === "blog" && <BlogAdmin />}
+            {section === "ip" && <IPDashAdmin />}
+          </div>
+        </motion.div>
       </main>
     </div>
   );

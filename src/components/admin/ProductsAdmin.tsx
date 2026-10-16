@@ -119,10 +119,10 @@ export function ProductsAdmin() {
         </div>
       </Panel>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {products.length === 0 ? <p className="text-muted">Məhsul yoxdur</p> : null}
         {products.map((p, i) => (
-          <ItemCard key={`${p.name}-${i}`} image={p.image} title={p.name} onEdit={() => edit(i)} onRemove={() => remove(i)}>
+          <ItemCard key={`${p.name}-${i}`} contain image={p.image} title={p.name} onEdit={() => edit(i)} onRemove={() => remove(i)}>
             <p>{p.description}</p>
             <p className="mt-1 font-semibold text-ink">{p.price} ₼</p>
             <p className="mt-1 line-clamp-2">{(p.hashtags ?? []).join(", ")}</p>

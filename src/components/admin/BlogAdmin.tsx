@@ -136,7 +136,7 @@ export function BlogAdmin() {
         </form>
       </Panel>
 
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <ItemCard
             key={post.id}

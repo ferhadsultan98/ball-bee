@@ -18,8 +18,8 @@ export async function uploadToCloudinary(file: File): Promise<string> {
 
 export function Panel({ title, children, className }: { title?: string; children: ReactNode; className?: string }) {
   return (
-    <section className={cn("surface rounded-[1.75rem] p-6 md:p-8", className)}>
-      {title ? <h2 className="mb-6 text-xl font-semibold tracking-[-0.02em] text-ink">{title}</h2> : null}
+    <section className={cn("surface rounded-[2rem] p-6 md:p-10", className)}>
+      {title ? <h2 className="text-h3 mb-8 text-ink">{title}</h2> : null}
       {children}
     </section>
   );
@@ -35,7 +35,7 @@ export function Field({ label, children }: { label: string; children: ReactNode 
 }
 
 const inputBase =
-  "w-full rounded-2xl border border-[var(--color-line)] bg-white/80 px-4 py-3 text-[0.97rem] text-ink outline-none transition focus:border-honey-500 focus:bg-white focus:ring-4 focus:ring-honey-300/30";
+  "w-full rounded-2xl border border-[var(--color-line)] bg-white/80 px-4 py-3.5 text-[0.97rem] text-ink outline-none transition placeholder:text-muted/60 focus:border-honey-500 focus:bg-white focus:ring-4 focus:ring-honey-300/30";
 
 export function Input(props: InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} className={cn(inputBase, props.className)} />;
@@ -47,7 +47,7 @@ export function Textarea(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
 
 export function FileInput({ onFile, label }: { onFile: (file: File) => void; label: string }) {
   return (
-    <label className="flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-dashed border-honey-500/50 bg-honey-200/20 px-4 py-5 text-sm font-medium text-honey-700 transition hover:bg-honey-200/40">
+    <label className="flex cursor-pointer items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-honey-400/50 bg-[radial-gradient(70%_100%_at_50%_0%,#fff,#fff6dc)] px-4 py-7 text-sm font-semibold text-honey-700 transition hover:border-honey-500 hover:bg-white">
       <input
         type="file"
         accept="image/*"
@@ -66,6 +66,7 @@ export function FileInput({ onFile, label }: { onFile: (file: File) => void; lab
 export function ItemCard({
   image,
   title,
+  contain,
   children,
   onEdit,
   onRemove,
@@ -74,6 +75,7 @@ export function ItemCard({
 }: {
   image?: string;
   title: string;
+  contain?: boolean;
   children?: ReactNode;
   onEdit: () => void;
   onRemove: () => void;
@@ -81,13 +83,23 @@ export function ItemCard({
   removeLabel?: string;
 }) {
   return (
-    <article className="surface flex flex-col overflow-hidden rounded-[1.5rem]">
+    <article className="surface group flex flex-col overflow-hidden rounded-[2rem] transition-[transform,box-shadow] duration-700 ease-[var(--ease-out-expo)] hover:-translate-y-1 hover:shadow-lift">
       {image ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={image} alt={title} className="aspect-[4/3] w-full bg-cream-300 object-cover" loading="lazy" />
+        <div className="relative m-2 aspect-[4/3] overflow-hidden rounded-[1.6rem] bg-[radial-gradient(70%_60%_at_50%_45%,#fff_0%,#fff6dc_55%,#fbe9c6_100%)]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className={cn(
+              "absolute inset-0 h-full w-full transition-transform duration-[1.2s] ease-[var(--ease-out-expo)] group-hover:scale-[1.04]",
+              contain ? "object-contain p-[10%] drop-shadow-[0_18px_18px_rgb(61_38_0/0.18)]" : "object-cover",
+            )}
+          />
+        </div>
       ) : null}
-      <div className="flex flex-1 flex-col gap-2 p-5">
-        <h3 className="font-semibold text-ink">{title}</h3>
+      <div className="flex flex-1 flex-col gap-2 px-5 pb-5 pt-3 md:px-6 md:pb-6">
+        <h3 className="text-[1.15rem] font-semibold tracking-[-0.02em] text-ink">{title}</h3>
         <div className="flex-1 text-sm text-muted">{children}</div>
         <div className="mt-3 flex gap-2">
           <button type="button" onClick={onEdit} className="btn btn-ghost btn-sm flex-1">
