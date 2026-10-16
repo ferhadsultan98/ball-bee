@@ -1,75 +1,46 @@
-# BalBee – The Sweet World of Bees 🐝
+# BalBee — natural honey from the Garayazi forest
 
-Welcome to **BalBee**, a modern web platform dedicated to natural honey products, bee culture, and health benefits.  
-The site showcases products, articles, and galleries while offering a fully functional **Admin Panel** to manage content.
+Official website of **BalBee** ([balbee.az](https://balbee.az)): natural honey and bee products from Aghstafa, Azerbaijan.
 
-🌍 Live: [balbee.az](https://balbee.az)
+## Stack
 
----
+- **Next.js 16** (App Router, React 19, Turbopack) with TypeScript
+- **Tailwind CSS 4** design tokens in `src/app/globals.css`
+- **Motion** for scroll-linked parallax and reveal animations, **Lenis** for smooth scrolling
+- **Firebase Realtime Database** for products, gallery and blog (read server-side via REST with ISR)
+- **Cloudinary** for product, gallery and blog images
 
-## 📖 Table of Contents
+## Features
 
-- [About](#about)  
-- [Features](#features)  
-- [Admin Panel](#admin-panel)  
-- [Tech Stack](#tech-stack)  
-- [Installation](#installation)  
-- [Development](#development)  
-- [Build](#build)  
-- [Usage](#usage)  
-- [Contributing](#contributing)  
-- [License](#license)  
+- Three languages with locale-prefixed URLs: `/az`, `/en`, `/ru` (`/` redirects by browser language)
+- SEO: per-page metadata, canonical + `hreflang`, Open Graph/Twitter cards, `sitemap.xml`, `robots.txt`, web manifest, JSON-LD (Organization/LocalBusiness, WebSite, Product, BlogPosting, Article, BreadcrumbList, ItemList)
+- Accessible: semantic landmarks, skip link, keyboard-friendly menu and lightbox, `prefers-reduced-motion` support
+- Admin panel at `/bee` (login at `/login`) for products, gallery, blog and visitor log
 
----
+## Structure
 
-## 🐝 About
+```
+src/
+  app/[locale]/        public pages (home, about, products, learn, gallery, blog, contact)
+  app/(admin)/         admin panel (/bee, /login) — noindex
+  app/sitemap.ts …     metadata routes
+  components/          layout, home sections, UI primitives, admin
+  i18n/                locale config + az/en/ru dictionaries
+  lib/                 data layer, SEO helpers, site config
+  proxy.ts             locale negotiation + legacy URL redirects
+```
 
-**BalBee** brings the richness of nature to digital.  
-Users can explore natural honey products, read about the health benefits of honey, learn about its history, and enjoy a media-rich gallery.  
-
-The website is fully localized for Azerbaijan and serves as a digital catalog for honey enthusiasts.  
-
----
-
-## ✨ Features
-
-- 🛒 **Products** – showcase and manage honey products with price and description  
-- 📷 **Gallery** – beautiful images of bees, honey, and nature  
-- 📰 **Blog** – articles about health, history, and natural processes  
-- ❤️ **Health & Benefits** – educational content about honey’s impact on well-being  
-- 📞 **Contact Page** – communication details for customers  
-
----
-
-## 🔑 Admin Panel
-
-BalBee includes a **secure Admin Panel** where authorized users can manage:  
-
-- **Products** – add, edit, delete honey products  
-- **Gallery** – upload and organize images  
-- **Blog** – publish and edit blog posts/articles  
-
-This allows the platform to be easily updated without touching the code.  
-
----
-
-## 🛠 Tech Stack
-
-- **Frontend**: [Vite](https://vitejs.dev/) + React  
-- **Styling**: SCSS Modules / CSS3  
-- **Backend**: (API/Server integration for products, gallery, blog)  
-- **Database**: MySQL / MariaDB (for storing dynamic content)  
-- **Admin Panel**: React-based UI connected to backend APIs  
-- **Deployment**: Production build served on hosting/cloud environment  
-
----
-
-## ⚙️ Installation
+## Development
 
 ```bash
-# Clone the repo
-git clone https://github.com/ferhadsultan98/ball-bee.git
-cd balbee
-
-# Install dependencies
 npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build
+npm run lint
+npm run typecheck
+```
+
+Optional environment variables:
+
+- `NEXT_PUBLIC_SITE_URL` — canonical origin (default `https://balbee.az`)
+- `FIREBASE_DATABASE_URL` — Realtime Database URL (default `https://ball-bee-default-rtdb.firebaseio.com`)
