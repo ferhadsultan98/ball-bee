@@ -12,7 +12,7 @@ export const site = {
     instagram: "https://www.instagram.com/balbee_ariciliq",
     facebook: "https://www.facebook.com/balbee2020",
   },
-  author: { name: "Fərhad Sultanov", url: "https://www.instagram.com/ferhad.sultann/" },
+  author: { name: "Fərhad Sultanov", url: "https://www.linkedin.com/in/farhadsultan/" },
 } as const;
 
 export function whatsappLink(message?: string): string {

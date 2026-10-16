@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { Footer } from "@/components/layout/Footer";
@@ -10,21 +9,8 @@ import { isLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { JsonLd, organizationGraph, pageMetadata } from "@/lib/seo";
 import { SITE_URL, site } from "@/lib/site";
+import { fontVariables } from "../fonts";
 import "../globals.css";
-
-const inter = Inter({
-  subsets: ["latin", "latin-ext", "cyrillic"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin", "latin-ext", "cyrillic"],
-  weight: ["500"],
-  style: ["italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
 
 
 export function generateStaticParams() {
@@ -69,7 +55,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   const t = await getDictionary(locale);
 
   return (
-    <html lang={locale} className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang={locale} className={fontVariables}>
       <head>
         <noscript>
           <style>{"[style*=\"opacity:0\"]{opacity:1!important;transform:none!important;filter:none!important}"}</style>

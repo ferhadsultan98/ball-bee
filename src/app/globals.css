@@ -4,8 +4,8 @@
    BalBee design tokens
    --------------------------------------------------------------------------- */
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-serif: var(--font-cormorant), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-serif-face), ui-serif, Georgia, "Times New Roman", serif;
 
   --color-cream-50: #fffdf8;
   --color-cream-100: #fff8e1;
@@ -74,7 +74,6 @@
     background-color: #fff8e1;
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-feature-settings: "cv11", "ss01", "ss03";
     min-height: 100dvh;
     overflow-x: clip;
   }

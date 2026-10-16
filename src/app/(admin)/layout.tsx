@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
+import { fontVariables } from "../fonts";
 import "../globals.css";
-
-const inter = Inter({ subsets: ["latin", "latin-ext", "cyrillic"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
   title: "BalBee Admin",
@@ -14,7 +12,7 @@ export const viewport: Viewport = { themeColor: "#fff6dc", width: "device-width"
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="az" className={inter.variable}>
+    <html lang="az" className={fontVariables}>
       <body>{children}</body>
     </html>
   );

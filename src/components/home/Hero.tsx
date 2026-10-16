@@ -38,7 +38,7 @@ export function Hero({ t, productsHref, whatsappHref }: Props) {
     <section ref={ref} aria-labelledby="hero-title" className="relative px-2 pt-2 md:px-4 md:pt-4">
       <motion.div
         style={reduce ? undefined : { scale: frameScale }}
-        className="relative isolate h-[calc(100svh-1rem)] min-h-[640px] origin-top overflow-hidden rounded-[1.75rem] bg-ink md:h-[calc(100svh-2rem)] md:rounded-[2.5rem]"
+        className="relative isolate flex min-h-[calc(100svh-1rem)] origin-top flex-col overflow-hidden rounded-[1.75rem] bg-ink md:min-h-[calc(100svh-2rem)] md:rounded-[2.5rem]"
       >
         <motion.div style={reduce ? undefined : { y: mediaY, scale: mediaScale }} className="absolute inset-0 -z-10">
           <Image
@@ -77,7 +77,7 @@ export function Hero({ t, productsHref, whatsappHref }: Props) {
 
         <motion.div
           style={reduce ? undefined : { y: contentY, opacity: contentOpacity }}
-          className="container-x flex h-full flex-col justify-end pb-10 pt-32 md:pb-14"
+          className="container-x flex flex-1 flex-col justify-end pb-10 pt-28 md:pb-14 md:pt-32"
         >
           <div className="grid items-end gap-10 lg:grid-cols-12">
             <div className="lg:col-span-8">
